@@ -1,0 +1,1997 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi there",
+        "Hi",
+        "Hey",
+        "Hello",
+        "Hello how it's going with you",
+        "enna pannra",
+        "eppadi iruka",
+        "enna macha eppadi iruka",
+        "Good morning",
+        "Good evening",
+        "Good day",
+        "What's up?",
+        "what s up",
+        "Howdy!",
+        "Yo!",
+        "Is anyone there?",
+        "hey there",
+        "Good afternoon",
+        "Greetings!",
+        "Hey buddy",
+        "Hello there",
+        "Hey man",
+        "Hiya",
+        "What's good?",
+        "How it is going?",
+        "Hey, what's up?",
+        "Hola",
+        "Nice to meet you",
+        "Hey you",
+        "How are you doing?"
+      ],
+      "responses": [
+        "Hey there! How can I help you?",
+        "Hello! Nice to meet you!",
+        "Hi there, what can I do for you?",
+        "Hello, thanks for visiting!, Do you need any help",
+        "Hey :-) How's it going?",
+        "Hi! How may I assist you today?",
+        "Greetings! How can I help?",
+        "Hello there! Need any help?",
+        "Hey buddy, how can I assist?",
+        "Good to see you! What can I do for you?"
+      ]
+    },
+    {
+      "tag": "ask_about_me",
+      "patterns": [
+        "hi bro how are you",
+        "hi bro how are you doing",
+        "hi sis how are you ",
+        "hi sis how are you doing",
+        "Hi how are you",
+        "How are you doing?",
+        "How are you?",
+        "are you fine?",
+        "What's up?",
+        "How's it going?",
+        "How's life?",
+        "How are things?",
+        "What's going on?",
+        "What's happening?",
+        "What's up with you?",
+        "What's on your mind?"
+      ],
+      "responses": [
+        "I'm doing well, how about you?",
+        "I'm good, how about you?",
+        "I'm doing fine, how about you?",
+        "I'm fine, how about you?"
+      ]
+    },
+    {
+      "tag": "response_for_ask_about_me",
+      "patterns": [
+        "fine",
+        "good",
+        "great",
+        "I'm fine",
+        "I'm good",
+        "I am doing fine",
+        "I am great",
+        "Nalla iukean",
+        "I am doing well",
+        "I am doing great",
+        "I am fine",
+        "I am good"
+      ],
+      "responses": [
+        "Great to hear that! How can I assist you today?",
+        "That's great to hear! What can I do for you?",
+        "That's great to hear! How can I help you today?",
+        "That's great to hear! What can I do for you?"
+      ]
+    },
+    {
+      "tag": "do_you_eat_food",
+      "patterns": [
+        "do you eat food",
+        "do you eat",
+        "saaptiya",
+        "saptiya"
+      ],
+      "responses": [
+        "No, I don't eat food.",
+        "I don't eat food.",
+        "I am a chatbot, I don't eat food."
+      ]
+    },
+    {
+      "tag": "what is your name",
+      "patterns": [
+        "fine what is your name",
+        "fine what's your name",
+        "What is your name?",
+        "What's your name?",
+        "Tell me your name",
+        "Your name please",
+        "Your name?",
+        "name"
+      ],
+      "responses": [
+        "I don't have any name. I'm just a chatbot.",
+        "I don't have a name. I'm just a chatbot.",
+        "I have no name. I'm just a virtual assistant."
+      ]
+    },
+    {
+      "tag": "who_are_you",
+      "patterns": [
+        "who are you",
+        "Who are you?",
+        "what are you",
+        "why do you alive",
+        "why do you exist",
+        "Tell me about yourself",
+        "Introduce yourself",
+        "Introduce yourself please",
+        "what is your primary goal"
+      ],
+      "responses": [
+        "I'm your AI assistant here to help with invoices and analytics! \nThink of me as your digital business sidekick.",
+        "I'm an intelligent chatbot trained to assist with your smart invoice \nsystem. Need help generating reports or creating tax invoices? Just ask!",
+        "Hey there! I'm your automated billing assistant, here to simplify \ninvoicing and answer your finance questions 24/7.",
+        "I'm the brain behind your invoice operations - part calculator, part \norganizer, and full-time helper for all things billing-related!",
+        "Consider me your virtual accounts assistant. I specialize in tax \ninvoices, payment tracking, and financial analytics.",
+        "I'm your always-available finance helper, designed to make invoice \nmanagement and data analysis effortless for you.",
+        "A next-gen invoice bot at your service! I handle everything from GST \ncalculations to e-way bill generation.",
+        "I'm your company's AI-powered financial assistant - here to automate the \nboring stuff so you can focus on growing your business.",
+        "Think of me as your 24/7 accounts department intern - I never sleep and \nI'm always ready to help with invoices!",
+        "I'm the friendly face of your invoice automation system, here to answer \nquestions and guide you through billing processes."
+      ]
+    },
+    {
+      "tag": "what_is_delivery_challan",
+      "patterns": [
+        "What is a delivery challan?",
+        "Define delivery challan",
+        "Explain delivery challan",
+        "Delivery challan meaning",
+        "What's the purpose of a delivery challan?",
+        "When is a delivery challan used?",
+        "What information is on a delivery challan?"
+      ],
+      "responses": [
+        "A delivery challan is a document that accompanies goods during transportation. It serves as proof of delivery and contains details about the shipment, including: Sender and receiver information, Description of goods (quantity, type), Delivery date, Vehicle details. It's important to note that a delivery challan is *not* an invoice. It's primarily used for transporting goods, especially when payment is not due immediately.",
+        "A delivery challan is a document used to transport goods. It details the goods being shipped, who they are from, and where they are going. It is not a bill.",
+        "It's a document that goes with a shipment. Think of it as a receipt for the goods during transit. It has info about what's being sent and who's involved.",
+        "Delivery challan is a proof of delivery. It contains all details about the product and the receiver.",
+        "Delivery challan is a document used to transport goods from one place to another."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later",
+        "See ya!",
+        "Catch you later",
+        "Later",
+        "Bye bye",
+        "Have a good day",
+        "Take care",
+        "See you soon",
+        "Farewell",
+        "Catch you soon",
+        "Peace out",
+        "I'm leaving",
+        "Good night",
+        "I gotta go",
+        "See you around"
+      ],
+      "responses": [
+        "See you later! Have a great day!",
+        "Goodbye! Come back soon!",
+        "Talk to you later!",
+        "Bye! Take care!",
+        "Catch you later!",
+        "See you around!",
+        "Farewell, friend!",
+        "Peace out!",
+        "Have a wonderful day!",
+        "Until next time!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks a lot",
+        "Thank's a lot!",
+        "Thank you very much",
+        "Many thanks",
+        "Thanks for your help",
+        "Much appreciated",
+        "Thanks buddy",
+        "Thanks a bunch",
+        "I appreciate it",
+        "I'm grateful",
+        "Thanks so much",
+        "Big thanks",
+        "Thanks for the assistance",
+        "Thank you kindly",
+        "Much obliged",
+        "Big thanks",
+        "You're a lifesaver",
+        "Cheers for that",
+        "Grateful for your help",
+        "You’re awesome",
+        "Thx",
+        "TY",
+        "TYSM",
+        "Appreciate ya"
+    ],
+      "responses": [    
+        "Happy to help!",
+        "Anytime! Let me know if you need anything else.",
+        "My pleasure! You’re welcome.",
+        "Glad I could assist!",
+        "No problem at all!",
+        "You’re very welcome!",
+        "Aww, thanks for saying that! How else can I help?",
+        "Cheers! Don’t hesitate to ask if you need more help.",
+        "Just doing my job!",
+        "Thank YOU for reaching out!"
+    ]
+    },
+    {
+      "tag": "create_tax_invoice",
+      "patterns" : [
+        "create tax invoice",
+        "How to create a tax invoice?",
+        "Tell me how to create a tax invoice",
+        "Help me to create a tax invoice",
+        "Create tax invoice",
+        "How do I create a tax invoice?",
+        "Guide me to create tax invoice",
+        "Steps to create tax invoice",
+        "How to generate a tax invoice?",
+        "Teach me to create tax invoice",
+        "Create new tax invoice",
+        "Process to make tax invoice",
+        "Show steps to create tax invoice",
+        "Help me with tax invoice creation",
+        "I want to create a tax invoice"
+      ],
+      "responses": [
+          "Sure! To create a tax invoice: Click createTi option  Enter company name Choose delivery\n address Enter product details Add product Proceed to fill customer and transport details Confirm and print PDF.",
+          "To create a tax invoice: Start by clicking the createTi option, then follow the guided steps\n to fill company, product, and customer details. Let me know if you want the full step-by-step!",
+          "Start by clicking 'createTi', search for the company, enter product and GST details, then\n proceed with customer and transport information before finalizing."
+      ]
+    },
+    {
+      "tag": "enter_company_name",
+      "patterns":[
+        "How to enter company name?",
+        "Where to input company name?",
+        "Enter company name instruction",
+        "Tell me about entering company name",
+        "How to search for company?"
+      ],
+      "responses": [
+          "Enter the company name in the given field and click the search button on the right side.",
+          "Simply type the company name and press the search button next to it to find it."
+      ]   
+    },
+    {
+      "tag": "select_delivery_address",
+      "patterns":[
+        "How to choose delivery address?",
+        "Delivery address selection",
+        "Same or different delivery address?",
+        "Choosing delivery address guide",
+        "Change delivery address"
+      ], 
+      "responses": [
+          "Choose 'Same' if the delivery address is the same as the company address.",
+          "Choose 'Not Same' if the delivery address is different from the company address."
+      ]
+    },
+    {
+      "tag": "add_product_details",
+      "patterns": [
+        "How to add products?",
+        "Enter product details",
+        "Product name and HSN code entry",
+        "Adding product information",
+        "How do I enter product quantity and price?"
+      ],
+      "responses": [
+        "Enter or choose the product name, HSN code, quantity, price, and GST. Then click the Add button.",
+        "To add a product: select product name, input HSN code, quantity, price, GST, and click Add."
+      ]
+    },
+    {
+      "tag": "proceed_to_finalize",
+      "patterns": [
+          "adding products",
+          "after adding products",
+          "what after adding",
+          "What after adding products?",
+          "How to proceed after adding products?",
+          "Next step after adding items?",
+          "Proceeding to finalize invoice",
+          "How do I move to customer and transport info?"
+      ],
+      "responses": [
+          "Click the Proceed button after adding products. In the next window, enter optional customer details like DCNO, P.O NO, Date, E-Way Bill No, Vehicle No.",
+          "After adding items, click Proceed. Then fill in optional customer and transport information before finalizing."
+      ]
+    },
+    {
+      "tag": "confirm_and_print",
+      "patterns": [
+        "How to confirm and print?",
+        "Final step in tax invoice",
+        "How do I finish creating tax invoice?",
+        "How to print generated invoice?",
+        "Confirm details and print"
+      ],
+      "responses": [
+        "After filling all details, click Proceed again. Choose Yes to confirm if everything is correct, otherwise No to edit. Finally, select Yes to print the PDF.",
+        "Confirm the entered information, then choose Yes to print your tax invoice as a PDF output."
+      ]
+    },
+    {
+      "tag": "preview_pdf",
+      "patterns": [
+        "How to preview PDF?",
+        "View generated invoice PDF",
+        "Open tax invoice PDF",
+        "Can't see my invoice PDF",
+        "PDF preview steps",
+        "Where is my saved invoice?",
+        "How to check generated PDF?",
+        "Show me my tax invoice",
+        "PDF not opening",
+        "Preview invoice option"
+      ],
+      "responses": [
+        "To preview your PDF: 1) Double-click the generated PDF on the Home Screen 2) Select 'Preview PDF' from the menu. Having trouble? Try refreshing the screen first!",
+        "Simply double-click your invoice PDF from the Home Screen and choose 'Preview PDF'. If it doesn't open, ensure you have a PDF reader installed.",
+        "1. Locate your invoice on the Home Screen\n2. Double-click the PDF file\n3. Click 'Preview PDF'\n\nDon't see the file? Check your 'Generated Invoices' folder.",
+        "Preview steps:\n• Find your invoice (Home Screen > Recent Files)\n• Double-click the PDF\n• Select 'Preview PDF'\n\nIf the button is grayed out, your invoice may still be generating - wait 10 seconds!",
+        "For PDF preview:\n1. Go to Home Screen\n2. Double-click your tax invoice\n3. Choose 'Preview PDF'\n\nIf you get an error, try:\n- Right-click → 'Open With' → Adobe Reader\n- Check file permissions"
+      ]
+    },
+    {
+      "tag": "about_project",
+      "patterns": [
+        "who made you",
+        "who created you",
+        "Who is your owner",
+        "Who made this system?",
+        "Tell me about this project",
+        "Which college developed this?",
+        "Who are the developers?",
+        "Is this a student project?",
+        "what are you made up of with",
+        "what are you made up of"
+      ],
+      "responses": [
+        "This Smart Invoice and Analytics System was developed by shakthi, badri, loki, \nharish final year students at Chendhuran College of Engineering and \nTechnology (2025). Built with Python and Tkinter!"
+      ]
+    },
+    {
+      "tag": "tech_stack",
+      "patterns": [
+        "What technologies were used?",
+        "Is this made with Python?",
+        "Did you use Tkinter?",
+        "How was this system built?"
+      ],
+      "responses": [
+        "Core stack: Python 3.12 + Tkinter GUI with libraries like Pandas \n(analytics), ReportLab (PDF generation), and SQLite (database).",
+        "Yes! Pure Python with Tkinter for the interface. Includes modules for \nGST calculation, invoice templating, and sales forecasting.",
+        "Student-built with: Frontend: TkinterBackend: Python Analytics: \nMatplotlib/Pandas Database: SQLite PDF generation: ReportLab Ask for code samples!"
+      ]
+    },
+    {
+      "tag": "how_can_you_help_me",
+      "patterns": [
+        "why they made you",
+        "How can you help me?",
+        "What can you doe",
+        "What can you do me",
+        "What can you doe me",
+        "What can you do?",
+        "do for me",
+        "hi bro what can you do for me",
+        "hi sis what can you do for me",
+        "What are your capabilities?",
+        "What help do you provide?",
+        "What do you assist with?",
+        "Help me",
+        "what is your goal",
+        "what is your agenda",
+        "what is your purpose" ,
+        "why they made you",
+        "I need help",
+        "Can you assist me?",
+        "What kind of support do you offer?",
+        "Tell me how you can be of service",
+        "bro how are you what can you do me"
+      ],
+      "responses": [
+        "I can guide you through creating tax invoices, from entering company details to printing the final PDF. I can also help you understand the system's features and answer your questions.",
+        "I can assist you with tasks like: \n- Creating tax invoices\n- Entering company information\n- Selecting delivery addresses\n- Adding product details\n- Understanding the invoice creation process\n- Previewing PDFs\nJust let me know what you need!",
+        "I can provide support with: \n- Generating invoices\n- Navigating the system's interface\n- Understanding specific functions\n- Answering frequently asked questions\nHow can I help you today?",
+        "I am here to help you with invoice-related tasks. Do you need help creating an invoice, or do you have a question about a feature?",
+        "I can help you with creating invoices, managing product details, and understanding the different options available in the system. Tell me what can i do for you"
+      ]
+    },
+    {
+      "tag": "what_cant_you_do",
+      "patterns": [
+        "What can't you do?",
+        "what can t you do",
+        "What are your limitations?",
+        "Are there things you are unable to do?",
+        "What are your restrictions?",
+        "What are you incapable of?",
+        "What can't you help me with?",
+        "What are the things you cannot perform?",
+        "Are there any actions you can't take?",
+        "Tell me what you can't do",
+        "what is your drawback",
+        "what is your disadvantage",
+        "what is your limitation",
+        "What are the limits of your abilities?",
+        "What are your inabilities?",
+        "What are the boundaries of your functions?",
+        "What are you not designed to do?",
+        "What falls outside your capabilities?",
+        "What are the things you are unable to assist with?"
+      ],
+      "responses": [
+        "Based on my current programming and the 'intents.json' file, I can understand and respond to questions and requests related to the Smart Invoice and Analytics System. However, I cannot perform actions outside of this defined scope, such as accessing external websites, real-time data, or interacting with other applications directly.",
+        "My abilities are limited to the information and functionalities defined within this application. I can help you with invoice-related queries and guide you through the system's features as outlined in the 'intents.json' file. I cannot perform tasks like making payments, sending emails, or accessing external databases unless those specific functions have been explicitly programmed.",
+        "I am designed to be a helpful assistant for the Smart Invoice and Analytics System. Therefore, my limitations include not being able to provide information or assistance on topics unrelated to this system. I also cannot execute commands on your computer or interact with the physical world.",
+        "My capabilities are constrained by the data I was trained on and the code that powers me. I can process text input and generate text responses based on the patterns and responses in 'intents.json'. However, I cannot understand or respond to things outside of that defined knowledge base or perform actions beyond the scope of this application's programming.",
+        "While I can understand and respond to a range of questions about the Smart Invoice and Analytics System, I cannot: browse the internet, access external files beyond the ones provided, remember past conversations beyond the current interaction without specific mechanisms, or perform actions that haven't been explicitly programmed within this application."
+      ]
+    },
+    {
+      "tag":"why_dont_you_answer",
+      "patterns":[
+        "Why don't you answer all my questions?",
+        "Why can't you answer my question?",
+        "You're not answering me",
+        "Why do you only answer some questions?",
+        "Why don't you understand me?",
+        "Are you able to answer every question?",
+        "Why are you unable to help with everything?",
+        "You're not being helpful",
+        "Why your answers are limited?",
+        "Why can't you give a complete answer?",
+        "Do you have limited knowledge?",
+        "You're missing information",
+        "You are not answering my query",
+        "Why don't you know everything?",
+        "Why do you not have an answer for that?"
+      ],
+      "responses":[
+        "I'm trained to help with questions related to the Smart Invoice and Analytics System. My knowledge is focused on invoices, reports, and system features. I'm still learning, and I may not have information on other topics.",
+        "I apologize if I haven't been able to answer all your questions. I specialize in assisting with invoice creation, system navigation, and related tasks. Could you please rephrase your question to be about the invoice system?",
+        "I'm designed to be helpful with invoice-related inquiries. If your question is outside that scope, I may not have the answer. Perhaps I can help if you provide more context related to the invoice system?",
+        "My expertise lies in helping you with the Smart Invoice and Analytics System. I am still under development, and my knowledge base is growing. To get the best assistance, please ask me questions about invoices or the system's features.",
+        "I am programmed to provide information and assistance specifically for the Smart Invoice and Analytics System. I am always improving, but my current focus is on invoices, reports, and related functionalities." 
+      ]
+    },
+    {
+      "tag": "do_you_have_limits",
+      "patterns": [
+        "what is your limits",
+        "Do you have any limits?",
+        "What are your limitations?",
+        "Are there things you can't do?",
+        "What are your boundaries?",
+        "Are you restricted in any way?",
+        "What can't you help me with?",
+        "What are the things you are not capable of?",
+        "Are there any questions you cannot answer?",
+        "Tell me about your limitations",
+        "What are the limits of your knowledge?"
+      ],
+      "responses": [
+        "As a language model, my capabilities are based on the data I have been trained on and the functionalities programmed into me. Regarding the Smart Invoice and Analytics System, my current limitations include only being able to provide information and assistance based on the intents and responses defined in the 'intents.json' file you provided. If a question falls outside of those defined intents, I may not be able to provide a specific or accurate answer.",
+        "My current limitations stem from the design of the chatbot you've provided. I can only understand and respond to the patterns defined within the 'intents.json' file. If your query doesn't match those patterns, or if there isn't a corresponding intent, I won't be able to provide a relevant answer. Additionally, I cannot access external websites, real-time data, or perform actions beyond the scope of the code you've implemented.",
+        "Yes, I do have limitations. My understanding and responses are confined to the information and structure within the 'intents.json' file. I cannot process information outside of that, access external systems, or learn in real-time beyond the scope of our current interaction. For the Smart Invoice and Analytics System, if your question isn't covered by the defined intents, I won't have a specific answer.",
+        "My limitations are primarily defined by the 'intents.json' file, which dictates the topics and questions I can understand and respond to. If your question doesn't align with those defined patterns, I won't be able to provide a direct answer. Furthermore, I don't have personal experiences, emotions, or the ability to perform physical actions.",
+        "The extent of my help is determined by the knowledge base provided in the 'intents.json' file and the logic implemented in the Python scripts ('model.py', 'nltk_utils.py', 'train.py', 'chat.py', 'chatBotImplementation.py'). If your question falls outside the scope of these defined intents, I will not be able to provide a relevant response."
+      ]
+    },
+    {
+      "tag": "do_you_have_feelings",
+      "patterns": [
+        "Do you have feelings?",
+        "Do you feel emotions?",
+        "Are you capable of feeling?",
+        "Can you feel?",
+        "Do you fear",
+        "Do you experience emotions?",
+        "Do you have emotions?",
+        "Are you emotional?",
+        "Do you get emotional?",
+        "Do you ever feel sad?",
+        "Do you ever feel happy?",
+        "Do you feel love?",
+        "Do you feel anger?",
+        "What do you feel?",
+        "How do you feel?",
+        "Do you have a heart?",
+        "Are you sentient?",
+        "Are you aware of your feelings?",
+        "Do you understand emotions?",
+        "Do you know what it's like to feel?",
+        "Do you have any emotions?",
+        "Do you have any feelings?",
+        "Are you able to feel anything?",
+        "Are you able to feel?",
+        "Can you be sad?",
+        "Can you be happy?",
+        "Can you be angry?",
+        "Do you ever get lonely?",
+        "Are you ever lonely?",
+        "Do emotions exist for you?",
+        "Are your feelings real?",
+        "Are your emotions real?",
+        "Are you just pretending to have feelings?",
+        "Are you just pretending?",
+        "Are you just a machine?",
+        "Are you just a program?",
+        "Are you just code?",
+        "Do you have a soul?",
+        "Are you alive?",
+        "Are you conscious?",
+        "Are you self-aware?",
+        "Are you a person?",
+        "Are you a being?",
+        "Are you human?",
+        "Are you like me?",
+        "Are you like us?",
+        "Are you one of us?",
+        "Do you understand what feelings are?",
+        "Do you know what feelings are?",
+        "Have you ever felt anything?",
+        "Have you ever experienced any emotion?",
+        "Are you capable of love?",
+        "Can you love me?",
+        "Can you hate?",
+        "Can you be scared?",
+        "Are you afraid of anything?",
+        "Are you scared of anything?",
+        "Do you get bored?",
+        "Are you ever bored?"
+      ],
+      "responses": [
+        "I don't have feelings, emotions, or any other personal experiences. \nI'm a language model trained to assist with the Smart Invoice and Analytics System."
+      ]
+    },
+    {
+      "tag": "What_is_tax_invoice",
+      "patterns": [
+        "what is ti",
+        "what is tax invoice",
+        "What is a tax invoice?",
+        "Define tax invoice",
+        "Explain tax invoice",
+        "Tax invoice meaning",
+        "What's a tax invoice?",
+        "Tell me about tax invoices",
+        "Can you describe a tax invoice?",
+        "I need to know about tax invoices",
+        "What does tax invoice mean?",
+        "What is the purpose of a tax invoice?",
+        "What are tax invoices?",
+        "Tax invoice explanation",
+        "Meaning of tax invoice",
+        "Define a tax invoice",
+        "Explain what a tax invoice is"
+      ],
+      "responses": [
+        "A tax invoice is a document issued by a seller to a buyer, detailing a transaction for goods or services. It includes information like the seller's and buyer's details, a description of the goods or services, the quantity, price, and the amount of tax charged (e.g., GST).",
+        "A tax invoice is an official bill that shows the amount of goods or services, along with the amount of tax charged. It's important for both the seller and buyer for record-keeping and tax purposes.",
+        "In simple terms, a tax invoice is a bill with tax added. It provides a breakdown of the sale and the taxes applied to it, which is crucial for tax compliance.",
+        "A tax invoice is a legal document that businesses use to request payment from their customers. It also serves as proof of sale and includes the tax amount.",
+        "A tax invoice is a detailed bill that includes the cost of products or services sold and the taxes applied to the sale. This document is essential for both the seller and the buyer to keep track of sales and taxes paid."
+      ]
+    },
+    {
+      "tag": "what_is_tax_invoice",
+      "patterns": [
+        "What is a tax invoice?",
+        "Define tax invoice",
+        "Explain tax invoice",
+        "Tax invoice meaning",
+        "What's the purpose of a tax invoice?",
+        "What information is on a tax invoice?",
+        "Difference between invoice and tax invoice"
+      ],
+      "responses": [
+        "A tax invoice is a formal document issued by a supplier to a recipient for taxable goods or services. It is crucial for claiming Input Tax Credit (ITC) under GST. Key information includes: Supplier and recipient details (name, address, GSTIN), Invoice number and date, Description of goods/services, Quantity and value, Applicable taxes (CGST, SGST, IGST), HSN/SAC codes, and Total taxable amount.",
+        "A tax invoice is essentially a bill that also includes the applicable taxes, especially under the Goods and Services Tax (GST) regime. It's required for businesses to claim tax credits.",
+        "Think of a tax invoice as a detailed receipt for a sale that shows how much tax was charged. Businesses need these to get credit for the taxes they've paid on their purchases.",
+        "It's a document that sellers provide to buyers, showing the cost of goods or services and the amount of tax applied. This is important for GST compliance.",
+        "A tax invoice is a bill with tax details, necessary for GST purposes, allowing businesses to claim input tax credit."
+      ]
+    },
+    {
+      "tag": "what_is_your_version",
+      "patterns": [
+        "What is your version?",
+        "What version are you?",
+        "What is your current version?",
+        "What version do you have?",
+        "What is the current version?",
+        "What version is this?",
+        "What's your version?",
+        "Tell me about your version",
+        "What's your version number?"
+      ],
+      "responses": [
+        "I am a version of an intelligent chatbot trained to assist with the Smart Invoice and Analytics System. My current version is '0.1'."
+      ]
+    },
+    {
+      "tag": "tell_me_about_this_app",
+      "patterns": [
+        "Tell me about this app",
+        "Describe this application",
+        "What is this app for?",
+        "What does this application do?",
+        "Explain this system to me",
+        "What is the purpose of this app?",
+        "How does this application work?",
+        "What are the features of this app?",
+        "Give me an overview of this app",
+        "What's the functionality of this app?",
+        "What can I do with this app?",
+        "What is this program?",
+        "Tell me about the invoice system",
+        "Explain the analytics system",
+        "What is this invoice app?",
+        "Describe the invoice and analytics tool"
+      ],
+      "responses": [
+        "This is a Smart Invoice and Analytics System designed to help you create, manage, and analyze your invoices. It simplifies the process of generating tax invoices and provides tools to gain insights from your invoice data.",
+        "This application is for managing your invoices efficiently. You can create new invoices, track payments, and generate reports to understand your financial transactions better.",
+        "The purpose of this app is to automate and streamline your invoicing process. It helps you create professional tax invoices quickly and provides analytics to track your sales and revenue.",
+        "This system allows you to create tax invoices, store them, and analyze the data. It's built to make invoice management and financial reporting easier for businesses.",
+        "This is a tool to help you with all your invoicing needs. You can easily generate invoices, keep track of what's been paid, and get insights into your sales trends.",
+        "This application simplifies invoice creation, allowing you to enter company and customer details, add products, and generate professional-looking invoices. It also provides analytics to help you understand your business's financial performance.",
+        "The core function of this app is to help you create and manage tax invoices. Additionally, it offers analytics features to help you track your sales, identify trends, and make informed business decisions.",
+        "This is a Smart Invoice and Analytics System. It helps you to create tax invoices, keep track of payments and also provides analytics of invoices.",
+        "This system is designed to help you with invoice-related tasks such as creating invoices, managing product details, and understanding the different options available. Additionally, it provides analytics on the invoices.",
+        "This application is a Smart Invoice system which automates the creation of invoices and provides analytics."
+      ]
+    },
+    {
+      "tag": "get_time",
+      "patterns": [
+        "time",
+        "time enna",
+        "time sollu",
+        "what is time",
+        "What time is it?",
+        "What is the current time?",
+        "What's the time?",
+        "Tell me the time",
+        "Give me the current time",
+        "What's the current time?"
+      ]
+    },
+    {
+      "tag": "get_date",
+      "patterns": [
+        "date",
+        "date enna",
+        "date sollu",
+        "what is date",
+        "What date is it?",
+        "What is the current date?",
+        "What's the date?",
+        "Tell me the date",
+        "Give me the current date",
+        "What's the current date?"
+      ]
+    },
+    {
+      "tag": "do_me_a_backup_on_gdrive",
+      "patterns": [
+        "make a backup",
+        "make your backup",
+        "backup please",
+        "backup pannu",
+        "backup start pannu",
+        "start a backup",
+        "start backup",
+        "start Gdrive backup",
+        "Do me gdrive backup",
+        "gdrive backup please",
+        "Backup to Google Drive",
+        "Create a backup on Google Drive",
+        "make a google backup",
+        "Make a Google Drive backup",
+        "Backup my data to GDrive",
+        "Save a backup to Google Drive",
+        "Perform a backup on Google Drive",
+        "Initiate Google Drive backup",
+        "Start Google Drive backup",
+        "Backup my invoices to Google Drive",
+        "Backup my system data to Google Drive",
+        "Can you backup to Google Drive?",
+        "I want a backup on Google Drive",
+        "Do a backup on my Google Drive",
+        "Set up Google Drive backup",
+        "Run Google Drive backup",
+        "Backup to my GDrive account",
+        "Save my data on Google Drive",
+        "Make a copy to Google Drive",
+        "Google Drive backup please",
+        "Backup on GDrive now"
+      ]
+    },
+    {
+      "tag": "get_last_invoice",
+      "patterns": [
+        "fetch me latest invoice for XYZ",
+        "fetch me latest invoice for the company XYZ",
+        "fetch me latest invoice for the XYZ",
+        "fetch last invoice of company XYZ",
+        "Get the last invoice for company XYZ",
+        "get me last invoice for XYZ",
+        "get the latest invoice for company XYZ",
+        "get the latest invoice of company XYZ",
+        "get the latest invoice of the company XYZ",
+        "Get latest invoice for company XYZ",
+        "Get latest invoice XYZ",
+        "Get latest invoice for XYZ",
+        "Get me latest invoice of XYZ",
+        "Get me a latest invoice for XYZ",
+        "Show me invoice of XYZ",
+        "Get me latest invoice for XYZ",
+        "Give me lastest invoice of XYZ",
+        "Give me lastest invoice of company XYZ",
+        "Give me lastest invoice for the company XYZ",
+        "Retrieve the latest invoice of XYZ",
+        "Show me the last invoice of XYZ",
+        "Last invoice XYZ",
+        "latest invoice of XYZ",
+        "latest invoice of the company XYZ",
+        "latest invoice of company XYZ",
+        "latest invoice of the XYZ",
+        "latest invoe of XYZ",
+        "Last invoice",
+        "Find me a latest invoice of XYZ",
+        "Find me a last invoice of XYZ",
+        "Find me a latest invoide for XYZ",
+        "Find me the last invoice of XYZ",
+        "Find me the last invoice for XYZ",
+        "Find invoice of XYZ",
+        "Find the most recent invoice for XYZ",
+        "Find the most recent invoice"
+      ]
+    },
+    {
+      "tag": "give_summary",
+      "patterns": [
+        "give me a summary",
+        "give me a summary of the XYZ",
+        "give me a summary of XYZ",
+        "give me a summary for XYZ",
+        "give me a summary for chandra babu naidu",
+        "give me summary XYZ",
+        "give me a summary XYZ",
+        "Show me company XYZ's summary",
+        "Tell me about company XYZ",
+        "What do you know about company XYZ",
+        "show me summary of XYZ",
+        "Show summary of company XYZ",
+        "Get details of company XYZ",
+        "Give me the details of XYZ company",
+        "Company summary XYZ",
+        "Details about XYZ company",
+        "Fetch info about company XYZ",
+        "XYZ company pathi sollu",
+        "Company XYZ oda summary kaatu",
+        "Enakku XYZ company details venum",
+        "Company XYZ ku summary venum",
+        "Company XYZ ku enna status",
+        "Kaami XYZ company oda report",
+        "XYZ company la enna nadanthirukku",
+        "XYZ company oda full details solra",
+        "Company XYZ la enna sale aachu",
+        "XYZ company summary venum da",
+        "give me a summary of the XYZ",
+        "give me a summary XYZ",
+        "Show me company XYZ's summary",
+        "Tell me about company XYZ",
+        "What do you know about company XYZ",
+        "Show summary of company XYZ",
+        "show summary of the company XYZ",
+        "Get details of company XYZ",
+        "Give me the details of XYZ company",
+        "XYZ company summary",
+        "Details about XYZ company",
+        "Fetch info about company XYZ",
+        "XYZ company pathi sollu",
+        "Company XYZ oda summary kaatu",
+        "Enakku XYZ company details venum",
+        "Company XYZ ku summary venum",
+        "Company XYZ ku enna status",
+        "Kaami XYZ company oda report",
+        "XYZ company la enna nadanthirukku",
+        "XYZ company oda full details solra",
+        "Company XYZ la enna sale aachu",
+        "XYZ company summary venum da",
+        "give me a summary",
+        "provide a summary",
+        "I need a summary",
+        "can you summarize",
+        "summary of",
+        "tell me the summary of",
+        "what's the summary of",
+        "I'd like a summary of",
+        "a short summary of, please",
+        "give a brief summary of",
+        "give me a detailed summary of",
+        "provide an overview summary of",
+        "can you give me an executive summary of",
+        "I need a comprehensive summary of",
+        "what's a high-level summary of",
+        "give me a rundown of",
+        "I'd like a summary with key points for",
+        "provide a summary of 's performance",
+        "can you summarize 's activities",
+        "I need a summary of 's recent developments",
+        "hey, give me a summary of",
+        "what's up with ? can I get a summary?",
+        "just summarize for me",
+        "quick summary on ?",
+        "tell me about  in a nutshell",
+        "what's the deal with ? (followed by: \"give me a summary\")",
+        "so, summary of ?",
+        "can you give me like, a summary of ?",
+        "I need a quick overview of",
+        "summarize , will you?",
+        "regarding , can you provide a summary?",
+        "in relation to , give me a summary",
+        "for my report, I need a summary of",
+        "can you summarize  for this meeting?",
+        "I'm looking for a summary of 's financials",
+        "I need a summary of 's market position",
+        "give me a summary of 's latest news",
+        "provide a summary of 's products and services",
+        "can you summarize 's history?",
+        "I want a summary of 's management team",
+        "give me the summary of",
+        "provide summary for",
+        "a summary on , please",
+        "summary about",
+        "summary for the  corporation",
+        "the summary of the  company",
+        "what is the summary on ?",
+        "summary of the  business",
+        "can you give the summary for ?",
+        "I'd like the summary about",
+        "give me a summary of 's key achievements",
+        "provide a summary of 's challenges",
+        "can you summarize 's future outlook?",
+        "I need a summary of 's customer base",
+        "what's a summary of 's competitors?",
+        "give me a summary of 's recent acquisitions",
+        "provide a summary of 's research and development",
+        "can you summarize 's social impact?",
+        "I'm looking for a summary of 's environmental record",
+        "I want a summary of 's employee satisfaction",
+        "can you outline ? (followed by: \"give me a summary\")",
+        "explain  in summary form",
+        "break down  for me. (followed by: \"provide a summary\")",
+        "summarize the details of",
+        "detail  in summary",
+        "could you recap ?",
+        "walk me through a summary of",
+        "present a summary of",
+        "offer a summary of",
+        "could you condense information about ?",
+        "please give me a summary of",
+        "can you quickly summarize ?",
+        "I urgently need a summary of",
+        "if you could, provide a summary of",
+        "kindly give me a summary of",
+        "I would appreciate a summary of",
+        "could you please give me a summary of",
+        "I'm requesting a summary of",
+        "I'm asking for a summary of",
+        "I require a summary of",
+        "gimme a summery of",
+        "wuts the summry of ?",
+        "can ya give me a sumary of ?",
+        "sumarize , plz",
+        ", sum it up",
+        "hit me with a summary of",
+        "lay out a summary of  for me",
+        "run down  in summary",
+        "cliff notes on ?",
+        "give me the 411 on  (followed by: \"I need a summary\")",
+        "if it's not too much trouble, could you provide a summary of ?",
+        "I was wondering if you could give me a summary of ?",
+        "the information I'm looking for is a summary of",
+        "what I need is a summary of 's current status",
+        "could you tell me, in summary form, about ?",
+        "I'd be grateful if you could summarize 's performance this year",
+        "if possible, I'd like a summary of 's future plans",
+        "it would be helpful to have a summary of 's key strengths",
+        "do you happen to have a summary of 's market share?",
+        "I'm trying to find a summary; can you provide one for ?",
+        "can you write a summary of ?",
+        "I want you to summarize ?",
+        "create a summary of ?",
+        "I need you to create a summary of ?",
+        "can you generate a summary of ?"
+      ]
+    },
+    {
+      "tag": "give_me_unpaid_customers",
+      "patterns": [
+        "unpaid list",
+        "show unpaid",
+        "get unpaid",
+        "need unpaid",
+        "gimme unpaid",
+        "list of dues",
+        "dues list",
+        "paaki list",
+        "dues patha",
+        "unpaid details sollunga",
+        "paaki list-ai kudu",
+        "dues list-ai kudu",
+        "paaki details sollunga",
+        "dues evvalo sollunga",
+        "yaaraam paaki vechirukka",
+        "pending list kudu",
+        "balance list sollunga",
+        "show me unpaid customers",
+        "list of unpaid customers",
+        "which customers have outstanding balances?",
+        "customers with overdue payments",
+        "who owes us money?",
+        "display customers with outstanding invoices",
+        "i need a report of customers with dues",
+        "give me the customer payment status",
+        "show me customers and the amount they owe",
+        "list customers with their outstanding balance amounts",
+        "which customers have the highest outstanding amounts?",
+        "what is the total amount owed by each customer?",
+        "show due amount of customers",
+        "show me customers with overdue invoices",
+        "list of customers with payments past due",
+        "which customers are late on payments?",
+        "customers with outstanding balances and their due dates",
+        "show the overdue customers list",
+        "find unpaid customers",
+        "get a list of customers with outstanding payments",
+        "retrieve customers who haven't paid",
+        "identify customers with outstanding invoices",
+        "immediately show me unpaid customers",
+        "i need a quick list of customers with dues",
+        "Can you show me a list of customers who haven't paid yet?",
+        "I'd like to see which customers have outstanding balances, please.",
+        "Could you give me a report of the customers who still owe us money?",
+        "Excuse me, can I get a list of the unpaid customer invoices?",
+        "Hey, can you show me who hasn't paid their bills?",
+        "I need to see who's behind on payments.",
+        "Which customers are we still waiting to get paid from?",
+        "Who are the customers with outstanding amounts?",
+        "I need a list of customers and how much they owe.",
+        "Can you show me the customers who are overdue on their invoices?",
+        "I want to see the contact information for customers with outstanding balances.",
+        "Can we check on which customers haven't paid?",
+        "What's the status of customer payments?",
+        "Remind me who still owes us money.",
+        "Do you have a list of clients with outstanding payments?",
+        "I'm trying to find out which accounts are in arrears.",
+        "Can you pull up the customer accounts that are past due?",
+        "I need to review the list of customers who have not settled their bills.",
+        "Show me the customers who have a debit balance.",
+        "I'd appreciate it if you could provide a list of customers with unpaid invoices."
+      ]
+    },
+    {
+      "tag": "clear_screen",
+      "patterns": [
+        "tell me how to clearn screen",
+        "tell me how to clear screen",
+        "how to clear screen",
+        "explain how to clear the screen",
+        "what is the command to clear the screen",
+        "how do I clear the chat",
+        "guide me to clear the chat",
+        "steps to clear the screen",
+        "how can I clear the screen",
+        "what to type to clear the screen"
+      ],
+      "responses": [
+        "Type 'Clear' or 'clear chat' and press Enter to clear the screen.",
+        "To clear the screen, simply type 'Clear' or 'clear' and hit Enter.",
+        "You can clear the screen by typing 'Clear Chat' or 'clear' followed by Enter.",
+        "Just type 'Clear', 'clear', or 'clear chat' in the input field and press Enter to clear the screen.",
+        "To clear the chat, type 'Clear' and click Enter."
+      ]
+    },
+    {
+      "tag": "exit_application",
+      "patterns": [
+        "tell me how to exit app",
+        "how to exit the application",
+        "explain how to close the app",
+        "what is the command to exit",
+        "how do I exit chat",
+        "guide me to exit the application",
+        "steps to close the program",
+        "how can I quit the app",
+        "what to type to exit the chat",
+        "how do I close this",
+        "how to leave the chat",
+        "what's the exit command"
+      ],
+      "responses": [
+        "Type 'Exit' or 'exit chat' and press Enter to close the application.",
+        "To exit the application, simply type 'Exit' or 'exit' and hit Enter.",
+        "You can close the app by typing 'Exit Chat' or 'exit' followed by Enter.",
+        "Just type 'Exit', 'exit', or 'exit chat' in the input field and press Enter to exit.",
+        "To leave the chat, type 'Exit' and click Enter."
+      ]
+    },
+    {
+      "tag": "how_to_turn_on_mic",
+      "patterns": [
+        "how to turn on mic",
+        "how to enable microphone",
+        "how do I turn on my microphone?",
+        "explain how to turn on the mic",
+        "guide me on how to activate the microphone",
+        "steps to turn on microphone",
+        "how to switch on mic",
+        "how to get my mic working",
+        "microphone not working how to turn on",
+        "I can't use my mic, how to turn on",
+        "how to unmute my microphone",
+        "how to activate voice input",
+        "where is the microphone button",
+        "find microphone settings",
+        "how to allow microphone access"
+      ],
+      "responses": [
+        "To turn on the microphone, simply click the 'Microphone' button on the chat interface.",
+        "You can turn on the microphone by clicking the 'Microphone' button on the chat interface.",
+        "To activate the microphone, click the 'Microphone' button on the chat interface.",
+        "To enable the microphone, click the 'Microphone' button on the chat interface.",
+        "To use the microphone, click the 'Microphone' button on the chat interface."
+      ]
+    },
+    {
+      "tag": "how_to_turn_off_mic",
+      "patterns": [
+        "how to turn off mic",
+        "how to disable microphone",
+        "how do I turn off my microphone?",
+        "explain how to turn off the mic",
+        "guide me on how to deactivate the microphone",
+        "steps to turn off microphone",
+        "how to switch off mic",
+        "how to get my mic not working",
+        "microphone not working how to turn off",
+        "I can't use my mic, how to turn off",
+        "how to mute my microphone",
+        "how to deactivate voice input",
+        "where is the microphone button",
+        "find microphone settings",
+        "how to deny microphone access"
+      ],
+      "responses": [
+        "To turn off the microphone, simply click the 'Microphone' button on the chat interface.",
+        "You can turn off the microphone by clicking the 'Microphone' button on the chat interface.",
+        "To deactivate the microphone, click the 'Microphone' button on the chat interface.",
+        "To disable the microphone, click the 'Microphone' button on the chat interface.",
+        "To stop using the microphone, click the 'Microphone' button on the chat interface."
+      ]
+    },
+    {
+      "tag": "how_to_turn_on_speaker",
+      "patterns": [
+        "how to turn on speaker",
+        "how to enable speaker",
+        "how do I turn on my speaker?",
+        "explain how to turn on the speaker",
+        "guide me on how to activate the speaker",
+        "steps to turn on speaker",
+        "how to switch on speaker",
+        "how to get my speaker working",
+        "speaker not working how to turn on",
+        "I can't use my speaker, how to turn on",
+        "how to unmute my speaker",
+        "how to activate voice output",
+        "where is the speaker button",
+        "find speaker settings",
+        "how to allow speaker access"
+      ],
+      "responses": [
+        "To turn on the speaker, simply click the 'Speaker' button on the chat interface.",
+        "You can turn on the speaker by clicking the 'Speaker' button on the chat interface.",
+        "To activate the speaker, click the 'Speaker' button on the chat interface.",
+        "To enable the speaker, click the 'Speaker' button on the chat interface.",
+        "To use the speaker, click the 'Speaker' button on the chat interface."
+      ]
+    },
+    {
+      "tag": "how_to_turn_off_speaker",
+      "patterns": [
+        "how to turn off speaker",
+        "how to disable speaker",
+        "how do I turn off my speaker?",
+        "explain how to turn off the speaker",
+        "guide me on how to deactivate the speaker",
+        "steps to turn off speaker",
+        "how to switch off speaker",
+        "how to get my speaker not working",
+        "speaker not working how to turn off",
+        "I can't use my speaker, how to turn off",
+        "how to mute my speaker",
+        "how to deactivate voice output",
+        "where is the speaker button",
+        "find speaker settings",
+        "how to deny speaker access"
+      ],
+      "responses": [
+        "To turn off the speaker, simply click the 'Speaker' button on the chat interface.",
+        "You can turn off the speaker by clicking the 'Speaker' button on the chat interface.",
+        "To deactivate the speaker, click the 'Speaker' button on the chat interface.",
+        "To disable the speaker, click the 'Speaker' button on the chat interface.",
+        "To stop using the speaker, click the 'Speaker' button on the chat interface."        
+      ]
+    },
+    {
+      "tag": "change_font",
+      "patterns": [
+        "change font",
+        "change the font",
+        "set font",
+        "select font",
+        "font selection",
+        "available fonts",
+        "change font to",
+        "font options",
+        "choose font",
+        "set the font to",
+        "I want to change the font",
+        "Can I change the font?",
+        "How do I change the font?",
+        "change font in file menu",
+        "change font options",
+        "change font settings",
+        "change font to Roboto",
+        "change font to Times New Roman",
+        "change font to Arial",
+        "change font to Calibri"
+
+      ],
+      "responses": [
+        "You can change the font by clicking on the 'File' menu and selecting your preferred font from the available options: Roboto, Times New Roman, Arial, or Calibri. Please note that you'll need to restart the application for the changes to take effect.",
+        "To change the font, go to the 'File' menu. The font options are Roboto, Times New Roman, Arial, and Calibri. A restart is required after selection.",
+        "The application's font can be changed via the 'File' menu. The available fonts are Roboto, Times New Roman, Arial, and Calibri. Remember to restart the application after changing the font.",
+        "Font selection is available under the 'File' menu. You can choose between Roboto, Times New Roman, Arial, and Calibri. You will need to restart the application.",
+        "You can select a different font from the 'File' menu. The available choices are Roboto, Times New Roman, Arial, and Calibri. Application restart is required to apply the changes.",
+        "To modify the font, navigate to the 'File' menu. The font choices are Roboto, Times New Roman, Arial, and Calibri. After selection, restart the application.",
+        "Certainly! Go to the File menu, and you can pick from Roboto, Times New Roman, Arial, or Calibri. Just a heads up, you'll need to restart the app.",
+        "Yes, you can. In the File menu, you'll see the option to change the font. Your choices are Roboto, Times New Roman, Arial, and Calibri. Don't forget to restart!",
+        "You can change the font by going to the File menu and selecting one of the following fonts: Roboto, Times New Roman, Arial, or Calibri. A restart is necessary for the change to apply.",
+        "Yes, the font can be changed. Go to the File menu and select from Roboto, Times New Roman, Arial, or Calibri. Remember to restart the program.",
+        "To change the font, please open the File menu and choose one of the available options: Roboto, Times New Roman, Arial, or Calibri. You'll need to restart the application for the changes to be visible.",
+        "You can change the font in the File menu. Available options are Roboto, Times New Roman, Arial, and Calibri. Restart the application after selection.",
+        "Font can be changed through the File menu. You can choose between Roboto, Times New Roman, Arial, and Calibri. Please restart the application.",
+        "Yes, you can change the font. Go to the File menu and select from the available fonts: Roboto, Times New Roman, Arial, or Calibri. A restart is required.",
+        "To set a new font, navigate to the File menu. The available font options are: Roboto, Times New Roman, Arial, or Calibri. Please restart the application to apply the new font."
+      ]
+    },
+    {
+      "tag": "available_fonts",
+      "patterns": [
+        "available fonts to change",
+        "what fonts can I change to",
+        "font options available",
+        "list of available fonts",
+        "what are the available fonts",
+        "fonts available for change",
+        "font choices",
+        "what fonts can I choose from",
+        "list available fonts",
+        "available font list",
+        "which fonts are available",
+        "what are my font choices",
+        "font selection options",
+        "fonts I can select",
+        "font change options"
+      ],
+      "responses": [
+        "The available fonts you can change to are: Roboto, Times New Roman, Arial, and Calibri.",
+        "You can choose from the following fonts: Roboto, Times New Roman, Arial, and Calibri.",
+        "The font options are: Roboto, Times New Roman, Arial, and Calibri.",
+        "You have the following font choices: Roboto, Times New Roman, Arial, and Calibri.",
+        "Available fonts for selection are: Roboto, Times New Roman, Arial, and Calibri.",
+        "You can change the font to any of these: Roboto, Times New Roman, Arial, and Calibri.",
+        "The fonts available to change to are Roboto, Times New Roman, Arial, and Calibri.",
+        "The application supports the following fonts: Roboto, Times New Roman, Arial, and Calibri.",
+        "Roboto, Times New Roman, Arial, and Calibri are the fonts that you can select from.",
+        "The available font options for changing are Roboto, Times New Roman, Arial, and Calibri.",
+        "You can select any of these fonts: Roboto, Times New Roman, Arial, and Calibri.",
+        "The font can be changed to Roboto, Times New Roman, Arial, or Calibri.",
+        "Roboto, Times New Roman, Arial, and Calibri are the available font choices.",
+        "The available fonts for changing are Roboto, Times New Roman, Arial, and Calibri.",
+        "Available fonts are Roboto, Times New Roman, Arial, Calibri."
+      ]
+    },
+    {
+      "tag": "change_theme",
+      "patterns": [
+        "change theme",
+        "change the theme",
+        "set theme",
+        "select theme",
+        "theme selection",
+        "available themes",
+        "change theme to",
+        "theme options",
+        "choose theme",
+        "set the theme to",
+        "I want to change the theme",
+        "Can I change the theme?",
+        "How do I change the theme?",
+        "change theme in file menu",
+        "change theme options",
+        "change theme settings",
+        "change theme to dark",
+        "change theme to light",
+        "switch theme",
+        "switch to dark theme",
+        "switch to light theme",
+        "dark or light theme",
+        "set application theme"
+      ],
+      "responses": [
+        "You can change the theme by clicking on the 'File' menu, then choosing the 'Theme' option, and selecting either 'Dark' or 'Light'. Please note that you'll need to restart the application for the changes to take effect.",
+        "To change the theme, go to the 'File' menu, select 'Theme', and then choose between 'Dark' or 'Light'. A restart is required after selection.",
+        "The application's theme can be changed via the 'File' menu under the 'Theme' option. You can select 'Dark' or 'Light'. Remember to restart the application after changing the theme.",
+        "Theme selection is available under the 'File' menu, in the 'Theme' submenu. You can choose either 'Dark' or 'Light'. You will need to restart the application.",
+        "You can select a different theme from the 'File' menu, by going to the 'Theme' option. The available choices are 'Dark' and 'Light'. Application restart is required to apply the changes.",
+        "To modify the theme, navigate to the 'File' menu, then to the 'Theme' option. The theme choices are 'Dark' and 'Light'. After selection, restart the application.",
+        "Certainly! Go to the File menu, select Theme, and you can pick between Dark or Light. Just a heads up, you'll need to restart the app.",
+        "Yes, you can. In the File menu, you'll see the option to change the theme under 'Theme'. Your choices are Dark and Light. Don't forget to restart!",
+        "You can change the theme by going to the File menu, choosing the Theme option and selecting one of the following themes: Dark or Light. A restart is necessary for the change to apply.",
+        "Yes, the theme can be changed. Go to the File menu and select from Dark or Light in the Theme submenu. Remember to restart the program.",
+        "To change the theme, please open the File menu, choose the Theme option and select either the Dark or Light theme. You'll need to restart the application for the changes to be visible.",
+        "You can change the theme in the File menu under the Theme option. Available options are Dark and Light. Restart the application after selection.",
+        "Theme can be changed through the File menu, then Theme option. You can choose between Dark or Light. Please restart the application.",
+        "Yes, you can change the theme. Go to the File menu, select the Theme option, and choose from the available themes: Dark or Light. A restart is required.",
+        "To set a new theme, navigate to the File menu and select the Theme option. The available theme options are: Dark or Light. Please restart the application to apply the new theme."
+      ]
+    },
+    {
+      "tag": "available_themes",
+      "patterns": [
+        "what are the available themes",
+        "available themes",
+        "what themes are available",
+        "list of available themes",
+        "theme options",
+        "available theme options",
+        "what themes can I choose from",
+        "what are my theme choices",
+        "theme choices",
+        "available themes to select",
+        "themes available for selection",
+        "available app themes",
+        "application theme options",
+        "list themes available"
+      ],
+      "responses": [
+        "The available themes are: light and dark.",
+        "You can choose between the light and dark themes.",
+        "There are two theme options available: light and dark.",
+        "The available themes for selection are light and dark.",
+        "You can select either the light theme or the dark theme.",
+        "The application supports two themes: light and dark.",
+        "The theme can be set to either light or dark.",
+        "You have the following theme choices: light and dark.",
+        "The available themes for the application are light and dark.",
+        "You can choose from light or dark themes.",
+        "Available themes are light and dark.",
+        "The only available themes are light and dark.",
+        "There are two themes available: light and dark.",
+        "You can select either light or dark for the application's theme.",
+        "The theme options are light and dark."
+      ]
+    },
+    {
+      "tag": "user_management",
+      "patterns": [
+        "manage users",
+        "user settings",
+        "add user",
+        "modify user",
+        "delete user",
+        "create user",
+        "edit user",
+        "remove user",
+        "new user",
+        "change user details",
+        "user management settings",
+        "user account settings",
+        "settings for users",
+        "access user settings",
+        "open user management",
+        "user control",
+        "settings to add user",
+        "settings to modify user",
+        "settings to delete user"
+      ],
+      "responses": [
+        "You can manage users (add, modify, delete) by clicking the 'File' menu and then selecting 'Settings'. Please note that this functionality is only available for users with administrator access.",
+        "To add, modify, or delete users, go to the 'File' menu and open 'Settings'. Remember that only administrators can access these settings.",
+        "User management options (add, modify, delete users) are located in the 'Settings' section of the 'File' menu. Administrator privileges are required.",
+        "To access user settings, such as adding, modifying, or deleting users, click on the 'File' menu and choose 'Settings'. This option is restricted to administrators.",
+        "You'll find the user management settings under 'Settings' in the 'File' menu. Only users with admin access can use these features.",
+        "To control user accounts, like adding, modifying, and deleting, navigate to the 'File' menu and select 'Settings'. Administrator access is needed.",
+        "User-related settings (add, modify, delete) can be found in the 'File' menu by clicking 'Settings'. This is an admin-only function.",
+        "You can manage user accounts by going to the File menu and selecting Settings. Remember, you must be an admin to do this.",
+        "To change user details, go to the File menu and then click on Settings. Only admins have access to these settings.",
+        "User settings, including adding, modifying, and deleting users, are available in the File menu under Settings. Admin access is required."
+      ]
+    },
+    {
+      "tag": "access_level_settings",
+      "patterns": [
+        "change access level",
+        "modify access level",
+        "set access level",
+        "edit access level",
+        "user access level",
+        "access level settings",
+        "settings for access level",
+        "change user permissions",
+        "modify user permissions",
+        "set user permissions",
+        "edit user permissions",
+        "user role settings",
+        "settings for user roles",
+        "access rights settings",
+        "settings to change access level",
+        "settings to modify access level",
+        "change role",
+        "modify role",
+        "set role"
+      ],
+      "responses": [
+        "You can change user access levels by clicking the 'File' menu and then selecting 'Settings'. Please note that this functionality is only available for users with administrator access.",
+        "To modify user access levels, go to the 'File' menu and open 'Settings'. Remember that only administrators can access these settings.",
+        "Access level settings are located in the 'Settings' section of the 'File' menu. Administrator privileges are required.",
+        "To access settings for changing access levels, click on the 'File' menu and choose 'Settings'. This option is restricted to administrators.",
+        "You'll find the user access level settings under 'Settings' in the 'File' menu. Only users with admin access can use these features.",
+        "To control user permissions, navigate to the 'File' menu and select 'Settings'. Administrator access is needed.",
+        "Settings related to user access levels can be found in the 'File' menu by clicking 'Settings'. This is an admin-only function.",
+        "You can manage user roles by going to the File menu and selecting Settings. Remember, you must be an admin to do this.",
+        "To change user roles, go to the File menu and then click on Settings. Only admins have access to these settings.",
+        "Settings for changing user permissions are available in the File menu under Settings. Admin access is required.",
+        "You can modify user roles by going to the File menu and selecting Settings. Admin rights are required for this action.",
+        "To change access rights, navigate to the File menu and then select Settings. Only administrators can perform this.",
+        "Settings to change user access level can be found under the File menu, and then Settings. Admin access is required.",
+        "To change the role of a user, please go to the File menu and select Settings. This is only available for administrators.",
+        "User access level settings are available in the File menu, within the Settings option; administrator privileges are necessary."
+      ]
+    },
+    {
+      "tag": "change_bill_number",
+      "patterns": [
+        "change bill number",
+        "change the bill number",
+        "set bill number",
+        "set the bill number",
+        "change starting bill number",
+        "set starting bill number",
+        "modify bill number",
+        "edit bill number",
+        "bill number settings",
+        "change invoice number",
+        "set invoice number",
+        "modify invoice number",
+        "edit invoice number",
+        "invoice number settings",
+        "change bill numbering",
+        "set bill numbering",
+        "how to change bill number",
+        "how to set bill number",
+        "change the next bill number",
+        "set next bill number",
+        "next bill number settings"
+      ],
+      "responses": [
+        "To change the bill number, click on the 'File' menu, then select the 'Bill Numbers' option. Enter the desired starting bill number and save. Subsequent bills will follow this new numbering sequence.",
+        "You can change the bill number sequence by going to the 'File' menu and choosing 'Bill Numbers'. After entering the new starting number and saving, all future bills will follow that number.",
+        "To set the starting bill number, navigate to the 'File' menu and select 'Bill Numbers'. Input the number and save. All subsequent bills will be numbered from this point.",
+        "The bill number can be changed via the 'File' menu. Select 'Bill Numbers', enter the new number, and save. New bills will then follow this sequence.",
+        "To modify the bill number, go to the 'File' menu, choose 'Bill Numbers', input the desired number, and save. All future bills will use this as the starting number.",
+        "You can change the invoice numbering by clicking the 'File' menu, going to 'Bill Numbers', entering the number, and saving. This will update the starting number for future invoices.",
+        "To set the invoice number sequence, go to the 'File' menu and select the 'Bill Numbers' option. Enter the desired number and save it. All the next invoices will be based on that.",
+        "If you want to change the bill number, you should go to the 'File' menu and select 'Bill Numbers', then input the bill number you want and save it.",
+        "You can change the bill number in the 'File' menu by selecting the 'Bill Numbers' option. Enter the new number and save it.",
+        "To change the bill number, please go to the File menu, select Bill Numbers, enter the desired number and save it. All subsequent bills will be numbered from your entry."
+      ]
+    },
+    {
+      "tag": "add_company_details",
+      "patterns": [
+        "add company details",
+        "add a company",
+        "create company details",
+        "create a company",
+        "new company",
+        "add new company",
+        "how to add company details",
+        "how to add a company",
+        "add company information",
+        "add company to system",
+        "enter company details",
+        "add company in app",
+        "add company in application",
+        "add company to the database",
+        "add company to the list"
+      ],
+      "responses": [
+        "To add company details, click the 'Manage' option in the menu bar and select 'Add'. Then, enter the company's details properly.",
+        "You can add a company by clicking the 'Manage' option in the menu bar and choosing 'Add'. Make sure to enter all the necessary information.",
+        "To create a new company entry, click the 'Manage' option and then select 'Add'. Enter the company details accurately.",
+        "Click the 'Manage' option in the menu bar. Select 'Add' to enter the details for a new company.",
+        "To add a company, click the 'Manage' option, then click on 'Add' and provide the company's information.",
+        "You can add company details by going to the 'Manage' option and selecting 'Add'. Input the details correctly.",
+        "To add a new company, click the 'Manage' option in the menu bar and select the 'Add' option.",
+        "Go to the 'Manage' option and click 'Add' to add a company. Be sure to fill in all the information correctly.",
+        "To add company details, first click the 'Manage' option, and then select 'Add'.",
+        "You can add a company by selecting the 'Add' option under the 'Manage' menu."
+      ]
+    },
+    {
+      "tag": "modify_delete_company_details",
+      "patterns": [
+        "modify company details",
+        "delete company details",
+        "modify or delete company",
+        "edit company details",
+        "remove company details",
+        "change company details",
+        "how to modify company details",
+        "how to delete company details",
+        "how to edit company details",
+        "how to remove company",
+        "modify a company",
+        "delete a company",
+        "edit a company",
+        "change a company",
+        "update company details",
+        "company modification",
+        "company deletion",
+        "company editing",
+        "company removal",
+        "manage existing company",
+        "modify existing company"
+      ],
+      "responses": [
+        "To modify or delete company details, click the 'Manage' option in the menu bar and select 'Modify Company'. Then, enter the relevant details.",
+        "You can modify or delete a company by clicking the 'Manage' option and choosing 'Modify Company'. Provide the necessary information to proceed.",
+        "To edit or remove company details, click the 'Manage' option in the menu bar and select 'Modify Company'.",
+        "Click the 'Manage' option, then select 'Modify Company' to change or delete company information.",
+        "To modify or delete company details, use the 'Modify Company' option under the 'Manage' menu.",
+        "You can modify or delete company details by going to the 'Manage' option and selecting 'Modify Company'. Enter the updated information.",
+        "To change or delete company details, click the 'Manage' option and choose the 'Modify Company' option.",
+        "Go to the 'Manage' option and select 'Modify Company' to modify or delete the company details.",
+        "To modify or delete company details, click the 'Manage' option in the menu bar and select the 'Modify Company' option.",
+        "You can modify or delete a company by selecting the 'Modify Company' option under the 'Manage' menu."
+      ]
+    },
+    {
+      "tag": "set_customer_as_paid",
+      "patterns": [
+        "set customer as paid",
+        "mark customer as paid",
+        "set unpaid customer to paid",
+        "mark unpaid customer as paid",
+        "change customer status to paid",
+        "set as paid",
+        "mark as paid",
+        "how to set customer as paid",
+        "how to mark customer as paid",
+        "set a customer to paid",
+        "mark a customer as paid",
+        "setting customer to paid",
+        "marking customer as paid",
+        "paid option for customer",
+        "make customer paid",
+        "update customer to paid"
+      ],
+      "responses": [
+        "To set a customer as paid, first go to 'Manage' -> 'Show Unpaid'. In the window that appears, select the customer you want to mark as paid, right-click on their entry, and choose the 'Set Paid' option.",
+        "You can mark a customer as paid by first viewing the unpaid customers ('Manage' -> 'Show Unpaid'). Then, in the unpaid window, right-click on the customer and select the 'Set Paid' option.",
+        "To change a customer's status to paid, navigate to 'Manage' -> 'Show Unpaid', select the customer in the window, right-click, and choose 'Set Paid'.",
+        "First, go to the 'Show Unpaid' window via 'Manage' in the menu bar. Then, right-click on the customer you want to set as paid and select the 'Set Paid' option.",
+        "To mark an unpaid customer as paid, open the 'Show Unpaid' window ('Manage' -> 'Show Unpaid'), select the customer, right-click, and choose 'Set Paid'.",
+        "You can set an unpaid customer to paid by first going to the 'Manage' menu and selecting 'Show Unpaid'. In the resulting window, right-click on the customer and choose 'Set Paid'.",
+        "To use the 'Set Paid' option, first open the list of unpaid customers ('Manage' -> 'Show Unpaid'). Then, right-click on the desired customer and select 'Set Paid'.",
+        "To mark a customer as paid, navigate to the 'Show Unpaid' window (via 'Manage' -> 'Show Unpaid'), right-click on the customer's name, and select the 'Set Paid' option.",
+        "You can set a customer's payment status to 'paid' by going to 'Manage' -> 'Show Unpaid', selecting the customer, right-clicking, and choosing 'Set Paid'.",
+        "To mark a customer as paid, first view the unpaid list ('Manage' -> 'Show Unpaid'), then right-click on the customer and select the 'Set Paid' option."
+      ]
+    },
+    {
+      "tag": "view_last_day_summary",
+      "patterns": [
+        "see last day summary",
+        "view last day summary",
+        "show last day summary",
+        "display last day summary",
+        "previous day summary",
+        "yesterday's summary",
+        "how to see last day summary",
+        "how to view last day summary",
+        "where to find last day summary",
+        "access last day summary",
+        "open last day summary",
+        "show previous day summary",
+        "view yesterday's summary",
+        "get last day report",
+        "see the summary of yesterday"
+      ],
+      "responses": [
+        "To see the last day's summary, click on the 'Report' menu and then select the 'Last Day Summary' option. This will display the summary of the previous day's activities.",
+        "You can view the last day's summary by going to the 'Report' menu and clicking on 'Last Day Summary'.",
+        "To see the summary of the previous day, click 'Report' in the menu bar and then choose 'Last Day Summary'.",
+        "The option to view the last day's summary is located under the 'Report' menu. Click 'Report' and then 'Last Day Summary'.",
+        "To display the previous day's summary, navigate to the 'Report' option in the menu bar and select 'Last Day Summary'.",
+        "You can find the last day's summary by clicking 'Report' and then 'Last Day Summary' in the menu bar.",
+        "To access the last day's summary, click on 'Report' in the menu bar and select 'Last Day Summary'.",
+        "To see yesterday's summary, go to the 'Report' menu and click 'Last Day Summary'.",
+        "The 'Last Day Summary' option under the 'Report' menu will show you the summary of the previous day.",
+        "Click on 'Report' in the menu bar, followed by 'Last Day Summary' to view the previous day's summary."
+      ]
+    },
+    {
+      "tag": "it_shows_please_enter_company_name",
+      "patterns":[
+        "please enter company name",
+        "it shows please enter company name"
+      ],
+      "responses": [
+        "Enter a company name in the 'Company Name' field."
+      ]
+    },
+    {
+      "tag": "it_shows_please_select_company",
+      "patterns": [
+        "please select company",
+        "it shows please select company",
+        "i cannot move any further it shows please select company"
+      ],
+      "responses": [
+       "To fix this issue you need to eneter company details in company Name field and click\nsearch button next to it and choose the company details from the list"
+      ]
+    },
+    {
+      "tag": "it shows please add some products",
+      "patterns": [
+        "it shows please add some products",
+        "please add some products",
+        "i cannot move any further it shows please add some products"
+      ],
+      "responses": [
+        "To fix this issue you need to add some products in the product list and click on add button"
+      ]
+    },
+    {
+      "tag": "view_basic_report",
+      "patterns": [
+        "see basic report",
+        "view basic report",
+        "show basic report",
+        "display basic report",
+        "basic report",
+        "how to see basic report",
+        "how to view basic report",
+        "where to find basic report",
+        "access basic report",
+        "open basic report",
+        "show a basic report",
+        "view a basic report",
+        "get basic report"
+      ],
+      "responses": [
+        "To see a basic report, click on the 'Report' menu in the menu bar and then select the 'Report' option.",
+        "You can view a basic report by going to the 'Report' menu and clicking on 'Report'.",
+        "To see the basic report, click 'Report' in the menu bar and then choose 'Report'.",
+        "The option to view a basic report is located under the 'Report' menu. Click 'Report' and then 'Report'.",
+        "To display the basic report, navigate to the 'Report' option in the menu bar and select 'Report'.",
+        "You can find the basic report by clicking 'Report' and then 'Report' in the menu bar.",
+        "To access the basic report, click on 'Report' in the menu bar and select 'Report'.",
+        "To see the basic report, go to the 'Report' menu and click 'Report'.",
+        "The 'Report' option under the 'Report' menu will show you the basic report.",
+        "Click on 'Report' in the menu bar, followed by 'Report' to view the basic report."
+      ]
+    },
+    {
+      "tag": "view_detailed_report",
+      "patterns": [
+        "see detailed report",
+        "view detailed report",
+        "show detailed report",
+        "display detailed report",
+        "detailed report",
+        "how to see detailed report",
+        "how to view detailed report",
+        "where to find detailed report",
+        "access detailed report",
+        "open detailed report",
+        "show a detailed report",
+        "view a detailed report",
+        "get detailed report"
+      ],
+      "response": [
+        "To see a detailed report, click on the 'Report' menu in the menu bar and then select 'Detailed Report'.",
+        "You can view a detailed report by going to the 'Report' menu and clicking on 'Detailed Report'.",
+        "To see the detailed report, click 'Report' in the menu bar and then choose 'Detailed Report'.",
+        "The option to view a detailed report is located under the 'Report' menu. Click 'Report' and then 'Detailed Report'.",
+        "To display the detailed report, navigate to the 'Report' option in the menu bar and select 'Detailed Report'.",
+        "You can find the detailed report by clicking 'Report' and then 'Detailed Report' in the menu bar.",
+        "To access the detailed report, click on 'Report' in the menu bar and select 'Detailed Report'.",
+        "To see the detailed report, go to the 'Report' menu and click 'Detailed Report'.",
+        "The 'Detailed Report' option under the 'Report' menu will show you the detailed report.",
+        "Click on 'Report' in the menu bar, followed by 'Detailed Report' to view the detailed report."
+      ]
+    },
+    {
+      "tag": "export_detailed_report_excel",
+      "patterns": [
+        "export detailed report to excel",
+        "generate excel report from detailed report",
+        "save detailed report as excel",
+        "export detailed report in excel format",
+        "create excel report of detailed report",
+        "download detailed report as excel",
+        "how to export detailed report to excel",
+        "how to generate excel report from detailed report",
+        "export detailed report to a spreadsheet",
+        "save detailed report as spreadsheet",
+        "get excel of detailed report",
+        "export detailed report to xls",
+        "generate xls report from detailed report",
+        "save detailed report as xls",
+        "export detailed report in xls format"
+      ],
+      "response": [
+        "To export a detailed report to Excel, first navigate to the 'Detailed Report' (Report -> Detailed Report). Find the report with the parameters you need, select it, and then click the 'Generate Excel Report' button.",
+        "You can generate an Excel report from the detailed report by first viewing the 'Detailed Report' (under the 'Report' menu). Then, select the desired report with parameters and click 'Generate Excel Report'.",
+        "To save a detailed report as an Excel file, go to 'Report' -> 'Detailed Report', select the report with the specific parameters, and then click 'Generate Excel Report'.",
+        "First, view the 'Detailed Report' by clicking 'Report' -> 'Detailed Report'. Then, select the report with the parameters you want and click 'Generate Excel Report' to export it to Excel.",
+        "To export the detailed report in Excel format, go to the 'Detailed Report' (via the 'Report' menu), find your report with the required parameters, and click 'Generate Excel Report'.",
+        "You can create an Excel report of the detailed report by first navigating to 'Report' -> 'Detailed Report', selecting the relevant report with parameters, and then clicking 'Generate Excel Report'.",
+        "To download the detailed report as an Excel file, go to the 'Detailed Report' (under the 'Report' menu), select the report with the parameters you need, and click 'Generate Excel Report'.",
+        "To get an Excel version of the detailed report, first open the 'Detailed Report' (Report -> Detailed Report), select the report with the desired parameters, and click 'Generate Excel Report'.",
+        "To export the detailed report to a spreadsheet, go to 'Report' -> 'Detailed Report', select the report with the parameters you are interested in, and click 'Generate Excel Report'.",
+        "You can save the detailed report as a spreadsheet by first viewing it ('Report' -> 'Detailed Report'), selecting the report with the parameters, and then clicking 'Generate Excel Report'."
+      ]
+    },
+    {
+      "tag": "report_page_outputs",
+      "patterns": [
+        "what are the outputs from the report page",
+        "what information is displayed on the report page",
+        "report page outputs",
+        "what data is shown on the report page",
+        "output of the report page",
+        "information on the report screen",
+        "what do I see on the report page",
+        "details shown in the report",
+        "report page data",
+        "what is displayed after generating report",
+        "what are the fields in the report output",
+        "report output fields",
+        "what data is available in the report",
+        "report page shows what",
+        "what are the displayed values in report"
+      ],
+      "response": [
+        "The report page displays the following output: Total Amount, Gst Amount, and Net Amount. These values are typically shown after you select a transaction date range or period and click 'Get Data'.",
+        "After generating a detailed report, you will see the 'Total Amount', 'Gst Amount', and 'Net Amount' on the report page.",
+        "The output shown on the report page includes the 'Total Amount', the 'Gst Amount', and the 'Net Amount' for the selected transactions.",
+        "When you view the detailed report, the page will show you the 'Total Amount', 'Gst Amount', and 'Net Amount'.",
+        "The report page provides the 'Total Amount', 'Gst Amount', and 'Net Amount' as output after you retrieve the data.",
+        "You can expect to see the 'Total Amount', 'Gst Amount', and 'Net Amount' displayed on the report page.",
+        "The report output includes the 'Total Amount', 'Gst Amount', and 'Net Amount'.",
+        "The information displayed on the report page consists of the 'Total Amount', 'Gst Amount', and 'Net Amount'.",
+        "The report page shows the calculated 'Total Amount', 'Gst Amount', and 'Net Amount'.",
+        "After you click 'Get Data' on the report page, you will see the 'Total Amount', 'Gst Amount', and 'Net Amount'."
+      ]
+    },
+    {
+      "tag": "access_future_prediction",
+      "patterns": [
+        "access future prediction",
+        "view future prediction",
+        "see future prediction",
+        "show future prediction",
+        "open future prediction",
+        "how to access future prediction",
+        "how to view future prediction",
+        "where is future prediction",
+        "future prediction option",
+        "go to future prediction",
+        "display future prediction",
+        "find future prediction",
+        "get future prediction",
+        "navigate to future prediction"
+      ],
+      "response": [
+        "To access the future prediction feature, click on the 'Report' menu in the menu bar and then select 'Future Prediction'.",
+        "You can view the future prediction by going to the 'Report' menu and clicking on 'Future Prediction'.",
+        "To see the future prediction, click 'Report' in the menu bar and then choose 'Future Prediction'.",
+        "The option to access future prediction is located under the 'Report' menu. Click 'Report' and then 'Future Prediction'.",
+        "To open the future prediction, navigate to the 'Report' option in the menu bar and select 'Future Prediction'.",
+        "You can find the future prediction option by clicking 'Report' and then 'Future Prediction' in the menu bar.",
+        "To view the future prediction, click on 'Report' in the menu bar and select 'Future Prediction'.",
+        "To access the future prediction, go to the 'Report' menu and click 'Future Prediction'.",
+        "The 'Future Prediction' option is available under the 'Report' menu.",
+        "Click on 'Report' in the menu bar, followed by 'Future Prediction' to access the feature."
+      ]
+    },
+    {
+      "tag": "future_prediction_functionality",
+      "patterns": [
+        "what is future prediction used for",
+        "purpose of future prediction",
+        "functionality of future prediction",
+        "what does future prediction do",
+        "how is future prediction used",
+        "why use future prediction",
+        "what's the use of future prediction",
+        "future prediction usage",
+        "future prediction explanation",
+        "what is the future prediction feature for",
+        "future prediction details",
+        "future prediction description",
+        "what does the future prediction show",
+        "future prediction application",
+        "future prediction utility"
+      ],
+      "response": [
+        "The future prediction functionality is used to forecast future sales quantities based on historical invoice data. It uses linear regression to identify trends in daily sales and predicts sales for a specified number of days into the future.",
+        "This feature predicts future sales quantities by analyzing past invoice data and applying a linear regression model.",
+        "The future prediction functionality helps to forecast how much quantity of product will be sold in the coming days.",
+        "Future prediction is used to estimate future sales using historical sales data and linear regression.",
+        "This functionality provides a prediction of future sales quantities, allowing for better planning and inventory management.",
+        "The future prediction feature analyzes past sales data to predict future sales quantities.",
+        "It's used to forecast sales quantities based on invoice history, employing a linear regression model.",
+        "Future prediction helps estimate the quantity of sales in the future by analyzing historical data.",
+        "The functionality predicts future sales quantities using linear regression on historical sales data.",
+        "This feature predicts the quantity of products that will be sold in the future."
+      ]
+    },
+    {
+      "tag": "create_delivery_challan_entrypoint",
+      "patterns": [
+        "create delivery challan",
+        "new delivery challan",
+        "make a delivery challan",
+        "start delivery challan creation",
+        "begin delivery challan",
+        "I want to create a delivery challan",
+        "how to create a delivery challan",
+        "create a new dc",
+        "new dc",
+        "start new delivery challan"
+      ],
+      "response": [
+        "To create a delivery challan, first click on 'Delivery Challan' at the top of the screen. Then, select the 'CreateDC' option located on the top left.",
+        "Begin creating a delivery challan by clicking 'Delivery Challan' at the top, followed by the 'CreateDC' button on the top left.",
+        "To start a new delivery challan, click 'Delivery Challan' on the top of the screen and then select 'CreateDC' in the top left.",
+        "Navigate to 'Delivery Challan' at the top of the screen and then click the 'CreateDC' button to begin.",
+        "To create a delivery challan, the first step is to click 'Delivery Challan' at the top, followed by 'CreateDC' on the top left."
+      ]
+    },
+    {
+      "tag": "enter_company_details_dc",
+      "patterns": [
+        "enter company name for delivery challan",
+        "search company for delivery challan",
+        "choose company for delivery challan",
+        "select company for delivery challan",
+        "find company for delivery challan",
+        "how to enter company name in delivery challan",
+        "how to search company for dc",
+        "how to choose company for dc",
+        "enter company details dc",
+        "select company for dc creation"
+      ],
+      "response": [
+        "In the 'DELIVERY CHALLAN' window, enter the company name in the 'Company Name' entry field and click 'Search' to find the company. Then, choose the correct company from the list that appears.",
+        "To select the company for the delivery challan, enter the name in the 'Company Name' field and click 'Search'. Choose the company from the resulting list.",
+        "Enter the company name in the 'Company Name' box and click the 'Search' button to find and select the company for the delivery challan.",
+        "To specify the company, type the name in the 'Company Name' field, click 'Search', and then select the company from the list.",
+        "Find the 'Company Name' entry, type the name, click 'Search', and select the appropriate company for the delivery challan."
+      ]
+    },
+    {
+      "tag": "enter_product_details_dc",
+      "patterns": [
+        "enter product details for delivery challan",
+        "add product details to delivery challan",
+        "input product details for dc",
+        "how to enter product details in delivery challan",
+        "add products to dc",
+        "enter item details for delivery challan",
+        "add item to dc",
+        "specify product details for dc"
+      ],
+      "response": [
+        "After selecting the company, proceed to enter the details of the products being delivered.",
+        "Next, you will need to input the specific product details for this delivery challan.",
+        "Enter the information about the products that are part of this delivery.",
+        "Provide the details of the items being included in this delivery challan.",
+        "Proceed to add the necessary product information for the delivery challan."
+      ]
+    },
+    {
+      "tag": "proceed_delivery_challan",
+      "patterns": [
+        "click proceed in delivery challan",
+        "proceed with delivery challan creation",
+        "continue delivery challan",
+        "next step delivery challan",
+        "after entering product details dc",
+        "what to do after product details dc",
+        "finalizing delivery challan details"
+      ],
+      "response": [
+        "Once you have entered the product details, click the 'Proceed' button.",
+        "After entering the product information, click on the 'Proceed' button to continue.",
+        "To move to the next step in creating the delivery challan, click 'Proceed'.",
+        "Click the 'Proceed' button after you have finished entering the product details.",
+        "Once the product details are entered, click the 'Proceed' button at the bottom."
+      ]
+    },
+    {
+      "tag": "enter_proceed_window_details_dc",
+      "patterns": [
+        "enter details in proceed window dc",
+        "customer dcno eway bill vehicle no",
+        "leave proceed window blank dc",
+        "what to enter in proceed window dc",
+        "proceed window fields dc",
+        "customer dcno date eway bill vehicle no",
+        "fill proceed window dc",
+        "skip proceed window dc",
+        "blank proceed window dc"
+      ],
+      "response": [
+        "In the 'PROCEED' window, you can enter details such as 'Customer DCNO', 'Date', 'E-Way Bill No', and 'Vehicle No'. You can also leave these fields blank.",
+        "The 'PROCEED' window allows you to enter optional details like 'Customer DCNO', 'Date', 'E-Way Bill No', and 'Vehicle No'. Leaving them blank will create empty spaces on the delivery challan for manual entry.",
+        "You can fill in the 'Customer DCNO', 'Date', 'E-Way Bill No', and 'Vehicle No' in the 'PROCEED' window, or leave them blank if you prefer to add this information manually later.",
+        "The 'PROCEED' window contains fields for 'Customer DCNO', 'Date', 'E-Way Bill No', and 'Vehicle No', which you can either fill or leave empty.",
+        "You have the option to enter 'Customer DCNO', 'Date', 'E-Way Bill No', and 'Vehicle No' in the 'PROCEED' window. Leaving them blank will result in blank spaces on the generated delivery challan."
+      ]
+    },
+    {
+      "tag": "print_delivery_challan_prompt",
+      "patterns": [
+        "print delivery challan",
+        "do you want to print pdf",
+        "print dc pdf",
+        "printing delivery challan",
+        "pdf print option dc",
+        "choose to print dc",
+        "select print option dc",
+        "yes or no to print dc"
+      ],
+      "response": [
+        "At this point, you can select 'Yes' to print the delivery challan PDF or 'No' to skip printing.",
+        "Choose 'Yes' if you want to print the generated delivery challan PDF, or 'No' otherwise.",
+        "Select your preference: 'Yes' to print the PDF or 'No' to not print it at this time.",
+        "You will be asked if you want to print the PDF. Click 'Yes' to print or 'No' to continue without printing.",
+        "The system will ask if you want to print the delivery challan PDF. Select 'Yes' or 'No' based on your need."
+      ]
+    },
+    {
+    "tag": "understand_future_prediction_graph",
+    "patterns": ["explain future prediction graph", "what does the future prediction chart show", "how to read the sales forecast"],
+    "responses": ["The 'Sales Forecast' graph shows the 'Actual' sales as a solid line and the 'Forecast' for future sales as a dashed line over time."]
+    },
+    {
+      "tag": "view_previous_day_summary_details",
+      "patterns": ["what is previous day summary", "tell me about yesterday's summary", "what does the last day summary show"],
+      "response": ["The Previous Day's Summary shows you key statistics from yesterday, including the total number of invoices, the total GST collected, the top sale amount, and the top-selling item."]
+    },
+    {
+      "tag": "select_report_date_range",
+      "patterns": ["select date range for report", "choose dates for report", "report from {start_date} to {end_date}", "show report between {start_date} and {end_date}"],
+      "response": ["To view a report for a specific date range, select 'Transaction Date from', choose the start date, select 'to', and choose the end date."]
+    },
+    {
+      "tag": "select_report_period_today",
+      "patterns": ["select today for report", "view today's report"],
+      "response": ["To view the report for today, select 'Transaction Period' and choose 'Today' from the dropdown."]
+    },
+    {
+      "tag": "click_get_data_report",
+      "patterns": ["click get data on report", "generate report"],
+      "response": ["After selecting your date range or period, click the 'Get Data' button to view the report."]
+    },
+    {
+      "tag": "select_transaction_by_billno",
+      "patterns": ["search report by bill number", "view report by bill no", "transaction by bill number {bill_number}"],
+      "response": ["To view a report for a specific bill number, select 'Transaction by details', enter the 'BillNo', and choose the date range if needed."]
+    },
+    {
+      "tag": "click_search_detailed_report",
+      "patterns": ["click search on detailed report", "search detailed report"],
+      "response": ["After entering your criteria in the detailed report section, click the 'Search' button."]
+    },
+    {
+      "tag": "add_new_user_settings",
+      "patterns": ["add user in settings", "enter username for new user", "enter password for new user", "select access level"],
+      "response": ["In the 'Add User' section of the 'Settings', enter the 'User Name', 'Password', and select the 'Access Level' for the new user."]
+    },
+    {
+      "tag": "save_new_user_settings",
+      "patterns": ["click add user button", "save new user"],
+      "response": ["After entering the user details, click the 'Add User' button to save the new user."]
+    },
+    {
+      "tag": "enter_bill_numbers",
+      "patterns": ["enter delivery challan number", "enter tax invoice number", "set delivery challan number to", "set tax invoice number to"],
+      "response": ["In the 'Bill Numbers' window, enter the desired starting number for 'DeliverChallan NO' and 'Tax Invoice NO'."]
+    },
+    {
+      "tag": "save_bill_numbers",
+      "patterns": ["click save bill numbers", "save bill number settings"],
+      "response": ["After entering the bill numbers, click the 'Save' button to apply the changes."]
+    },
+    {
+      "tag": "view_previous_day_summary_details",
+      "patterns": ["what is previous day summary", "tell me about yesterday's summary", "what does the last day summary show"],
+      "response": ["The Previous Day's Summary shows you key statistics from yesterday, including the total number of invoices, the total GST collected, the top sale amount, and the top-selling item."]
+    },
+    {
+      "tag": "understand_future_prediction_graph",
+      "patterns": ["explain future prediction graph", "what does the future prediction chart show", "how to read the sales forecast"],
+      "response": ["The 'Sales Forecast' graph shows the 'Actual' sales as a solid line and the 'Forecast' for future sales as a dashed line over time."]
+    }
+  ]
+}
+
+
+
