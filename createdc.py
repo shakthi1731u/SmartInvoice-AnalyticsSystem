@@ -1,20 +1,20 @@
-
-from utils.path_utils import get_invoice_and_challan_paths
-from customtkinter import CTkToplevel, CTkFrame, CTkLabel, CTkEntry, CTkButton, CTk, CTkRadioButton, CTkProgressBar, CTkComboBox, StringVar, CTkScrollbar, IntVar, DoubleVar
-from CTkMessagebox import CTkMessagebox
-from tkinter import messagebox, END
-from tkinter.ttk import Treeview, Style
-import sqlite3
-from tkcalendar import DateEntry
-from jinja2 import Template
-from num2words import num2words
-from weasyprint import HTML
 import os
 import json
-import subprocess
 import base64
-import configparser
 import datetime
+import sqlite3
+import subprocess
+import configparser
+from weasyprint import HTML
+from jinja2 import Template
+from tkinter import messagebox
+from num2words import num2words
+from tkcalendar import DateEntry
+from tkinter.ttk import Treeview, Style
+from utils.runtime_paths import resource_path
+from utils.path_utils import get_invoice_and_challan_paths
+from customtkinter import CTkComboBox, StringVar, CTkScrollbar, IntVar
+from customtkinter import CTkToplevel, CTkFrame, CTkLabel, CTkEntry, CTkButton, CTkRadioButton
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 _, challan_path = get_invoice_and_challan_paths(base_dir)
@@ -71,6 +71,16 @@ class createDC:
                 json.dump(data, f, indent=4)
         except Exception as e:
             print(f"Error saving cache: {e}")
+
+    def get_sumatra_path(self):
+        path = resource_path(
+            "third_party", "sumatra", "SumatraPDF.exe"
+        )
+
+        if not os.path.exists(path):
+            return None
+
+        return path
 
     def on_input_pname(self):
         text = self.pName.get()
@@ -324,11 +334,38 @@ class createDC:
 
     def initiatebill(self, rows):
         def print_pdf(file_path):
-            sumatra_path = os.path.join(os.getcwd(), "Sumatra.exe")
+            sumatra_path = self.get_sumatra_path()
+            
+            if not sumatra_path:
+                messagebox.showerror(
+                    "Printing Error",
+                    "SumatraPDF not found.\nPlease reinstall the application."
+                )
+                return
+            
+            if not os.path.exists(file_path):
+                messagebox.showerror(
+                    "File Missing",
+                    f"PDF not found:\n{file_path}"
+                )
+                return
 
-            if os.path.exists(sumatra_path):
-                subprocess.Popen([sumatra_path, "-print-to-default", file_path],
-                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if os.path.getsize(file_path) == 0:
+                messagebox.showerror(
+                    "Invalid PDF",
+                    "PDF file is empty or corrupted."
+                )
+                return
+
+                        
+            subprocess.Popen(
+                [
+                    sumatra_path,
+                    "-print-to-default", 
+                    "-silent",
+                    file_path
+                ],
+                shell=False)
 
         self.generatebillno()
         # if user doesn't want to move any further they can cancel the process by clicking no.

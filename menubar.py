@@ -8,8 +8,8 @@ from tkinter import messagebox
 from tkinter import Menu, RIDGE
 from lastdaySummary import summary
 from billnumbers import billNumbers
-from utils.backup_utils import run_backup
 from CTkMessagebox import CTkMessagebox
+from utils.backup_utils import run_backup
 from report import Report, DetailedReport
 from company import addCustomer, modCustomer
 
@@ -25,7 +25,7 @@ class MenuBar:
         self.windowControl = windowControl
         self.accesslevel = accesslevel
         self.master = root
-        self.menubar = Menu(root)
+        self.menubar = Menu(self.master)
         self.backup_running = False
         self.master.config(menu=self.menubar)
 
@@ -117,6 +117,13 @@ class MenuBar:
                          font=(self.font, 10))
 
     def calladdProducts(self):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+        
+            
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         # Using index 5 for Add Product
@@ -125,6 +132,12 @@ class MenuBar:
             products.AddProduct(self.master, self.windowControl, self.font)
 
     def callmodProducts(self):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         # Using index 5 for Add Product
@@ -133,7 +146,18 @@ class MenuBar:
             products.ModifyProduct(self.master, self.windowControl, self.font)
 
     def callUnpaid(self):
-        Unpaid(self.master, self.font, self.accesslevel)
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
+        if self.accesslevel != "ADMIN":
+            return messagebox.showerror("No Access", "Access Denied")
+        #using index 8 for unpaid Customer
+        if not self.windowControl["unpaid_customer"]:
+            self.windowControl["unpaid_customer"] = True
+            Unpaid(self.master, self.font, self.windowControl)
 
     def callLastDayReport(self):
         try:
@@ -179,6 +203,12 @@ class MenuBar:
         threading.Thread(target=task, daemon=True).start()
 
     def callSettings(self, master, font):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         if not self.windowControl["settings"]:
@@ -186,6 +216,12 @@ class MenuBar:
             Settings(master, self.windowControl, font)
 
     def callDetailedReport(self):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         if not self.windowControl["detailed_report"]:
@@ -193,6 +229,12 @@ class MenuBar:
             DetailedReport(self.master, self.windowControl, self.font)
 
     def billnumbers(self, master, font):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         if not self.windowControl["bill_number"]:
@@ -200,6 +242,12 @@ class MenuBar:
             billNumbers(master, self.windowControl, font)
 
     def callReport(self):
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if self.accesslevel != "ADMIN":
             return messagebox.showerror("NO Access", "Access Denied")
         if not self.windowControl["report"]:
@@ -207,15 +255,23 @@ class MenuBar:
             Report(self.master, self.windowControl, self.font)
 
     def calladdCompany(self):
-        if self.accesslevel != "ADMIN":
-            return messagebox.showerror("NO Access", "Access Denied")
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+
         if not self.windowControl["add_company"]:
             self.windowControl["add_company"] = True
             addCustomer(self.master,  self.windowControl, self.font)
 
     def callmodCompany(self):
-        if self.accesslevel != "ADMIN":
-            return messagebox.showerror("NO Access", "Access Denied")
+        #checking of other windows or open
+        #if opened then accessing this windows is restricted
+        isOthersOpened = self.checkOtherWindows()
+        if isOthersOpened: 
+            return 
+        
         if not self.windowControl["modify_company"]:
             self.windowControl["modify_company"] = True
             modCustomer(self.master, self.windowControl, self.font)
@@ -245,3 +301,9 @@ class MenuBar:
                 config.write(configfile)
 
         return messagebox.showinfo("SUCCESS", "RESTART THE APPLICATION FOR CHANGES TO TAKE EFFECT")
+
+    def checkOtherWindows(self):
+        for key in self.windowControl:
+            if self.windowControl[key] == True:
+                return True
+        return False

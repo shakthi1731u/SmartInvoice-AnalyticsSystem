@@ -1,15 +1,17 @@
-from customtkinter import CTkLabel, CTkEntry, CTkToplevel, CTk, CTkFrame, CTkButton, CTkComboBox, StringVar, CTkScrollbar
+from customtkinter import CTkLabel, CTkEntry, CTkToplevel, CTkFrame, CTkButton, CTkComboBox, StringVar, CTkScrollbar
 import sqlite3
 from tkinter.ttk import Treeview, Style
 from tkinter import messagebox, END
 
 
 class addCustomer:
-    def __init__(self, master, windowControl, font="Roboto"):
+    def __init__(self, master, windowControl, customerData, font="Roboto"):
         self.windowControl = windowControl
         self.master = master
         self.font = font
+        self.customerData = customerData
         self.companyTL = CTkToplevel(self.master)
+        self.companyTL.attributes("-topmost", True)
         self.companyTL.iconbitmap("images/add_icon.png")
         self.companyTL.wm_transient(self.master)
         self.companyTL.title("Add Entity")
@@ -18,6 +20,10 @@ class addCustomer:
         self.companyTL.protocol("WM_DELETE_WINDOW", self.destroy)
 
         self.setWidget()
+
+        if self.customerData:
+            self.loadDefault()
+    
 
     def setWidget(self):
         CTkLabel(self.companyTL, text="Entity Name", font=(
@@ -88,6 +94,12 @@ class addCustomer:
 
         CTkButton(self.companyTL, text="Add Customer",
                   command=self.storeData).place(relx=0.35, rely=0.95)
+
+    def loadDefault(self):
+        self.companyName.set(self.customerData["Company_Name"])
+        self.mobileNumber.set(self.customerData["Mobile_Number"])
+        self.city.set(self.customerData["City"])
+        self.state.set(self.customerData["State"])
 
     def storeData(self):
         def getCompanies(con, cur):

@@ -6,14 +6,11 @@ from utils.type_utils import to_float
 from customtkinter import CTkToplevel, CTkScrollbar
 
 class Unpaid:
-    def __init__(self, master, font,  access):
-        #restricting access for normal user
-        if access != "ADMIN": 
-            messagebox.showerror("NO Access", "Access Denied")
-            return None
-        
+    def __init__(self, master, font, windowControl):
+
         self.font = font
         self.master = master
+        self.windowControl = windowControl
         self.data = None
         
         self.get_unpaid()
@@ -22,13 +19,13 @@ class Unpaid:
         if not self.data: 
             messagebox.showinfo("NO DATA", "No unpaid invoices found.")
             return None
-        
+            
         self.window = CTkToplevel(self.master)
         self.window.wm_transient(self.master)
         self.window.title("Unpaid Invoices")
         self.window.resizable(width=False, height=False)
         self.window.geometry("500x500+350+150")
-        self.window.protocol("WM_DELETE_WINDOW", self.window.destroy)
+        self.window.protocol("WM_DELETE_WINDOW", self.killWindow)
 
         tvStyle = Style()
         tvStyle.theme_use('clam')
@@ -92,7 +89,6 @@ class Unpaid:
             cursor.execute(QUERY)
             self.data = cursor.fetchall()
 
-
     def fill_data(self):
         if not self.data: return None
         for i in self.data:
@@ -106,3 +102,7 @@ class Unpaid:
                     i[3]                  # date
                 )
             )
+
+    def killWindow(self):
+        self.windowControl["unpaid_customer"] = False
+        self.window.destroy()

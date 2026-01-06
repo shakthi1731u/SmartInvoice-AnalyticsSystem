@@ -4,14 +4,15 @@ from tkinter import messagebox, ttk
 from utils.type_utils import to_int, to_float
 
 class AddProduct:
-    def __init__(self, master, windowControl, font="Roboto"):
+    def __init__(self, master, windowControl, customerData=None, font="Roboto"):
         self.master = master
         self.windowControl = windowControl
         self.font = font
+        
     
         self.window = CTkToplevel(master)
         self.window.title("Add Product")
-        self.window.geometry("500x500+450+150") # Increased height slightly
+        self.window.geometry("450x380+450+150") # Increased height slightly
         self.window.resizable(False, False)
         self.window.wm_transient(master)
         self.window.protocol("WM_DELETE_WINDOW", self.destroy)
@@ -56,6 +57,10 @@ class AddProduct:
 
         # Store entry widgets reference
         self.entries = [self.entry_0, self.entry_1, self.entry_2, self.entry_3]
+
+    def loadDefault(self):
+        self.entry_0.set(self.customerData["Company_Name"])
+        self.entry
 
     def create_entry(self, label_text, row):
         CTkLabel(self.frame, text=label_text, font=(self.font, 14)).grid(row=row, column=0, sticky="w", pady=10, padx=10)

@@ -143,12 +143,12 @@ def runapp(theme, fontstyle, windowControl):
     root = CTk()
     root.withdraw()
 
-    login = Login(root)
+    """ login = Login(root)
     root.wait_window(login.window)
 
     if not login.success:
         root.destroy()
-        return
+        return """
 
     app = MyApp(root, theme, fontstyle, windowControl)
     root.mainloop()
@@ -180,6 +180,7 @@ class MyApp:
 
         SplashScreen(
             self.root,
+            self.font,
             on_close=self.start_app
         )
 
@@ -242,7 +243,7 @@ class MyApp:
         MenuBar(self.root, self.font, self.theme, self.destroy, self.windowControl, self.accesslevel)
 
     def mainPage(self):
-        MainPage(self.tabview.tab("Tax Invoice"), self.font)
+        MainPage(self.tabview.tab("Tax Invoice"), self.windowControl, self.font)
 
     def dcPage(self):
         dChallan(self.tabview.tab("Delivery Challan"), self.font)
@@ -278,7 +279,6 @@ class MyApp:
         with open(marker_file, "w") as f:
             f.write("initialized")
 
-
 if __name__ == "__main__":
     config = configparser.ConfigParser()
     config.read("config/configuration.ini")
@@ -294,7 +294,10 @@ if __name__ == "__main__":
         "report": False,
         "detailed_report": False,
         "bill_number": False,
-        "settings": False
+        "settings": False,
+        "unpaid_customer": False,
+        "tax_invoice": False,
+        "delivery_challan": False
     }
 
     # UI must be in main thread

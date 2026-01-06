@@ -44,7 +44,6 @@ class Login(getAuth):
     def __init__(self, parent):
         self.success = False
 
-        
         config = configparser.ConfigParser()
         config.read("config/configuration.ini")
 

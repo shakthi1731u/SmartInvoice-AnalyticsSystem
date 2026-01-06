@@ -1,23 +1,20 @@
 import os
 import pickle
-
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from tkinter import messagebox
 
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
-
 
 class backupGDrive:
     def __init__(self, file_path):
         self.file_path = file_path
         self.creds = None
 
-    # -------------------------------------------------
-    # 🔑 AUTH
-    # -------------------------------------------------
+    #AUTH
     def get_creds(self):
         if os.path.exists("token.pickle"):
             with open("token.pickle", "rb") as token:
@@ -35,12 +32,11 @@ class backupGDrive:
             with open("token.pickle", "wb") as token:
                 pickle.dump(self.creds, token)
 
-    # -------------------------------------------------
-    # ☁️ UPLOAD ZIP (GUARANTEED FOLDER PLACEMENT)
-    # -------------------------------------------------
+    #UPLOAD ZIP
     def initiateBackup(self):
         try:
             if not os.path.exists(self.file_path):
+                messagebox.showerror("ERROR", "Backup ZIP not found")
                 raise FileNotFoundError("Backup ZIP not found")
 
             service = build("drive", "v3", credentials=self.creds)
@@ -77,9 +73,8 @@ class backupGDrive:
             print(f"[BACKUP ERROR] {e}")
             return False
 
-    # -------------------------------------------------
-    # 📁 FOLDER HANDLING
-    # -------------------------------------------------
+    
+    #FOLDER HANDLING
     def _get_or_create_backup_folder(self, service):
         folder_name = "LatestBackup_SIAS"
 

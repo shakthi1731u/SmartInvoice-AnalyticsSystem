@@ -15,9 +15,10 @@ from utils.runtime_paths import resource_path
 from customtkinter import CTkButton, CTkLabel, CTkFrame, CTkScrollbar, CTkImage
 
 class MainPage:
-    def __init__(self, master, fontstyle):
+    def __init__(self, master, windowControl, fontstyle):
         self.master = master
         self.font = fontstyle
+        self.windowControl = windowControl
 
         # setting up required frames
         self.titleFrame = CTkFrame(
@@ -51,8 +52,15 @@ class MainPage:
         connection.close()
 
     def callcreatebill(self):
-        createBill(self.master, self.font)
-        self.filldata()
+        for key in self.windowControl:
+            if self.windowControl[key] == True:
+                return
+            
+        if self.windowControl["tax_invoice"] == False:
+            self.windowControl["tax_invoice"] = True
+            createBill(self.master, self.windowControl, self.font)
+            self.filldata()
+            
 
     def titleframe(self):
         CTkLabel(self.titleFrame, text="TAX INVOICE", font=(
@@ -172,7 +180,6 @@ class MainPage:
                     "FILE NOT FOUND",
                     f"PDF not found:\n{pdf_path}"
                 )
-
 
     def treeviewframe(self):
         tvStyle = Style()

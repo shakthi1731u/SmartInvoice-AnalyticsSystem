@@ -1,23 +1,29 @@
-from customtkinter import CTkToplevel, CTkFrame, CTkLabel, CTkEntry, CTkButton, CTkRadioButton, CTkComboBox, StringVar, CTkScrollbar, IntVar, DoubleVar
-from utils.path_utils import get_invoice_and_challan_paths
-from utils.runtime_paths import resource_path
-from utils.type_utils import to_int, to_float
-from tkinter import messagebox, END
-from tkinter.ttk import Treeview, Style
-import sqlite3
-from tkcalendar import DateEntry
-from jinja2 import Template
-from num2words import num2words
-from weasyprint import HTML
+import io
 import os
 import json
-import subprocess
+import qrcode
 import base64
-import configparser
+import sqlite3
 import datetime
+import subprocess
+import configparser
+from jinja2 import Template
+from weasyprint import HTML
+from tkinter import messagebox
+from num2words import num2words
+from company import addCustomer
+from tkcalendar import DateEntry
+from tkinter.ttk import Treeview, Style
+from utils.runtime_paths import resource_path
+from utils.type_utils import to_int, to_float
+from utils.path_utils import get_invoice_and_challan_paths
+from customtkinter import CTkRadioButton, CTkComboBox, StringVar, CTkScrollbar, IntVar
+from customtkinter import CTkToplevel, CTkFrame, CTkLabel, CTkEntry, CTkButton, DoubleVar
+
 
 class createBill:
-    def __init__(self, master, font="Roboto"):
+    def __init__(self, master, windowControl, font="Roboto"):
+        self.windowControl = windowControl
         self.master = master
         self.font = font
         self.cbill = CTkToplevel(self.master)
@@ -193,7 +199,6 @@ class createBill:
         except Exception as e:
             messagebox.showerror("STOCK UPDATE ERROR", str(e))
 
-
     def validate_and_add(self, available_qty, rowData):
         self.selected_row_values = rowData
         user_input = self.sell_qty_var.get()
@@ -355,6 +360,16 @@ class createBill:
     def on_pname_enter(self, event=None):
         self.fill_product_details()
 
+    def get_sumatra_path(self):
+        path = resource_path(
+            "third_party", "sumatra", "SumatraPDF.exe"
+        )
+
+        if not os.path.exists(path):
+            return None
+
+        return path
+
     def setWidget(self):
         topFrame = CTkFrame(self.cbill, height=120)
         topFrame.pack(fill="both")
@@ -372,12 +387,77 @@ class createBill:
         CTkLabel(topFrame, text="Recipient Name", font=(
             self.font, 15)).place(relx=0.02, rely=0.35)
         self.company = StringVar()
-        self.cmpEnt = CTkEntry(topFrame, width=800,
+        self.cmpEnt = CTkEntry(topFrame, width=150,
                                textvariable=self.company, font=(self.font, 15))
-        self.cmpEnt.place(relx=0.12, rely=0.35)
-        self.cmpBtn = CTkButton(topFrame, text="Search", font=(
-            self.font, 15), command=self.findCompany)
-        self.cmpBtn.place(relx=0.85, rely=0.35)
+        self.cmpEnt.place(relx=0.11, rely=0.35)
+
+        CTkLabel(
+            topFrame, 
+            text="Mobile", 
+            font=(self.font, 15)
+        ).place(relx=0.26, rely=0.35)
+
+        self.RecipientMobileNumber = StringVar()
+        self.RecipientMobileEnt = CTkEntry(
+            topFrame,
+            textvariable= self.RecipientMobileNumber,
+            font=(self.font, 15)
+        )
+        self.RecipientMobileEnt.place(relx=0.30, rely=0.35)
+        
+        CTkLabel(
+            topFrame, 
+            text="City", 
+            font=(self.font, 15)
+        ).place(relx=0.44, rely=0.35)
+
+        self.RecipientCity = StringVar()
+        self.RecipientCityEnt = CTkEntry(
+            topFrame,
+            textvariable= self.RecipientCity,
+            font=(self.font, 15)
+        )
+        self.RecipientCityEnt.place(relx=0.47, rely=0.35)
+
+        CTkLabel(
+            topFrame, 
+            text="State", 
+            font=(self.font, 15)
+        ).place(relx=0.61, rely=0.35)
+
+        indian_states = [
+            "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa",
+            "Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh",
+            "Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan",
+            "Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"
+        ]
+
+        self.RecipientState = StringVar(value="Tamil Nadu")
+        self.RecipientStateEnt = CTkComboBox(
+            topFrame,
+            variable= self.RecipientState,
+            values = indian_states,
+            font=(self.font, 15)
+        )
+        self.RecipientStateEnt.place(relx=0.64, rely=0.35)
+
+        self.addcmpBtn = CTkButton(
+            topFrame,
+            text= "Add",
+            font= (self.font, 15),
+            width= 100,
+            command= self.addCustomerfromcreateBill
+        )
+        self.addcmpBtn.place(relx=0.78, rely=0.35)
+
+        self.cmpBtn = CTkButton(
+            topFrame, 
+            text="Search", 
+            font=(self.font, 15), 
+            width= 100,
+            command= self.findCompany
+        )
+        self.cmpBtn.place(relx=0.89, rely=0.35)
 
         CTkLabel(topFrame, text="is delivery address is same as shipping address?", font=(
             self.font, 15)).place(relx=0.02, rely=0.70)
@@ -405,7 +485,6 @@ class createBill:
             values=self.pname_cache_data,
         )
         self.pnamecbx.place(relx=0.07, rely=0.30)
-        self.pnamecbx.bind("<Return>", self.on_pname_enter)
 
         CTkLabel(secondFrame, text="HSN", font=(
             self.font, 15)).place(relx=0.26, rely=0.30)
@@ -476,19 +555,58 @@ class createBill:
         CTkButton(bottomFrame, text="Proceed", font=(self.font, 15), fg_color="green",
                   width=150, command=self.proceed).place(relx=0.83, rely=0.65)
 
+    def addCustomerfromcreateBill(self):
+        #creating data dictionary
+        data = {
+            "Company_Name":self.company.get(), 
+            "Mobile_Number": self.RecipientMobileNumber.get(),
+            "State": self.RecipientState.get(),
+            "City": self.RecipientCity.get()
+        }
+
+        if not self.windowControl["add_company"]:
+            self.windowControl["add_company"] = True
+            addCustomer(self.master,  self.windowControl, self.font)
+        
+
     def generatebillno(self):
         month = datetime.datetime.now().strftime("%B")
         self.billno = f"tiKEI_{month}_{self.invoiceno}"
 
     def initiatebill(self, rowsoftreeview):
         def print_pdf(file_path):
-            sumatra_path = os.path.join(os.getcwd(), "Sumatra.exe")
-            if os.path.exists(sumatra_path):
-                subprocess.Popen(
-                    [sumatra_path, "-print-to-default", file_path],
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL
+            sumatra_path = self.get_sumatra_path()
+
+            if not sumatra_path:
+                messagebox.showerror(
+                    "Printing Error",
+                    "SumatraPDF not found.\nPlease reinstall the application."
                 )
+                return
+            
+            if not os.path.exists(file_path):
+                messagebox.showerror(
+                    "File Missing",
+                    f"PDF not found:\n{file_path}"
+                )
+                return
+
+            if os.path.getsize(file_path) == 0:
+                messagebox.showerror(
+                    "Invalid PDF",
+                    "PDF file is empty or corrupted."
+                )
+                return
+            
+            subprocess.Popen(
+                [
+                    sumatra_path, 
+                    "-print-to-default", 
+                    "-silent",
+                    file_path
+                ],
+                shell=False
+            )
 
         self.generatebillno()
 
@@ -631,9 +749,6 @@ class createBill:
         self.cbill.destroy()
 
         if messagebox.askyesno("PROCEED", "Invoice created successfully!\nDo you want to print the PDF?"):
-            month = datetime.datetime.now().strftime("%B")
-            year = datetime.datetime.now().strftime("%Y")
-            day = datetime.datetime.now().strftime("%d")
             print_pdf(pdf_path)
             
     def proceed(self, event=None):
@@ -806,13 +921,12 @@ class createBill:
             qty = to_float(self.Qnty.get())
             price = to_float(self.price.get())
             gst = to_float(self.gst.get())
-
         except ValueError:
             return messagebox.showerror("ERROR", "Invalid numeric input")
 
         priceXquantity = qty * price
-
         gstamount = 0
+        
         if gst > 0:
             gstamount = (priceXquantity * gst) / 100
 
@@ -831,7 +945,7 @@ class createBill:
         self.price.set(0)
         self.gst.set(0)
 
-    def on_treeview_double_click(self, event):
+    def on_treeview_double_click(self, event=None):
         selected = self.companyTV.focus()
         if not selected:
             return
@@ -864,7 +978,10 @@ class createBill:
 
         # ---- UI FILL (SAFE) ----
         company_str = f"{row[0]}, {row[1]}, {row[2]}, {row[3]}"
-        self.company.set(company_str)
+        self.company.set(row[0])
+        self.RecipientCity.set(row[3])
+        self.RecipientState.set(row[4])
+        self.RecipientMobileNumber.set(row[7])
 
         self.scompanyname.set(row[0])
         self.sbuildingno.set(row[1])
@@ -911,25 +1028,25 @@ class createBill:
         return
 
     def findCompany(self):
-        def searchCompany(companyName):
+        def searchCompany(column, value):
+            print(f"Column = {column} Value = {value} Column Type = {type(column)} Value Type={type(value)}")
             with sqlite3.connect("datas/customerDB.db") as con:
                 cur = con.cursor()
 
-                QUERY = """
+                QUERY = f"""
                 SELECT company_name, building_no, street, city, state,
                     pincode, representative, mobile_number, gst_number, id
                 FROM customers
-                WHERE company_name LIKE ?
+                WHERE {column} LIKE ?
                 """
-                cur.execute(QUERY, (f"%{companyName}%",))
+                cur.execute(QUERY, (f"%{value}%",))
                 return cur.fetchall()
 
-        if not self.company.get():
-            return messagebox.showwarning("WARNING", "PLEASE ENTER COMPANY NAME")
+        if not self.company.get() and not self.RecipientMobileNumber.get() and not self.RecipientCity.get():
+            return messagebox.showwarning("WARNING", "PLEASE ENTER CUSTOMER DETAILS TO FIND RELATED DATA")
 
         self.findC = CTkToplevel(self.cbill)
-        self.findC.title("Select company")
-        self.findC.geometry("700x250+300+100")
+        self.findC.geometry("750x250+300+100")
         self.findC.wm_transient(self.cbill)
 
         vscrollbar = CTkScrollbar(self.findC, orientation="vertical")
@@ -942,17 +1059,44 @@ class createBill:
             yscrollcommand=vscrollbar.set
         )
 
-        self.companyTV.heading(1, text="Company")
-        self.companyTV.heading(2, text="Representative")
-        self.companyTV.heading(3, text="Mobile")
-        self.companyTV.heading(4, text="City")
+        self.companyTV.heading(1, text="Recipient")
+        self.companyTV.column(1, anchor="n", width=100)
+        self.companyTV.heading(2, text="Mobile")
+        self.companyTV.column(2, anchor="n", width=100)
+        self.companyTV.heading(3, text="City")
+        self.companyTV.column(3, anchor="n", width=80)
+        self.companyTV.heading(4, text="State")
+        self.companyTV.column(4, anchor="n", width=80)
         self.companyTV.heading(5, text="ID")
+        self.companyTV.column(5, anchor="n", width=50)
 
         self.companyTV.pack(fill="both", expand=True)
         self.companyTV.bind("<Double-1>", self.on_treeview_double_click)
 
-        for row in searchCompany(self.company.get()):
-            self.companyTV.insert("", "end", values=(row[0], row[6], row[7], row[3], row[9]))
+        flagSearched = False
+        if self.company.get():
+            rows = searchCompany("company_name", self.company.get())
+            if rows==[]:
+                self.findC.destroy()
+                return messagebox.showinfo("ZERO DATA", "NO Record Found")
+            self.findC.title("Company Details searched by Company Name")
+            flagSearched = True
+        if not flagSearched and self.RecipientMobileNumber.get():
+            rows = searchCompany("mobile_number", self.RecipientMobileNumber.get())
+            if rows==[]:
+                self.findC.destroy()
+                return messagebox.showinfo("ZERO DATA", "NO Record Found")
+            self.findC.title("Company Details searched by Mobile Number")
+            flagSearched = True
+        if not flagSearched and self.RecipientCity.get():
+            rows = searchCompany("city", self.RecipientCity.get())
+            if rows==[]:
+                self.findC.destroy()
+                return messagebox.showinfo("ZERO DATA", "NO Record Found")
+            self.findC.title("Company Details searched by City Name")
+
+        for row in rows:
+            self.companyTV.insert("", "end", values=(row[0], row[7], row[3], row[4], row[9]))
 
     def sdestroy(self, tempcompany, tempbuidling, tempstreet, tempstate, tempcity, temprepresentative, tempmobile, tempgst, temppincode):
         self.scompanyname.set(tempcompany)
@@ -968,11 +1112,16 @@ class createBill:
         self.addressWin.destroy()
 
     def destroy(self):
+        self.windowControl["tax_invoice"] = False
         self.cbill.destroy()
 
 
 class bill:
     def __init__(self, invoiceno, customerDetails, scompanyname, sbuilding_no, sstreet, scity, sstate, spincode, sales, customerdcno, pono, date, ewaybillno, vehicle, totalwithgst, gstoptional="", tibillno=""):
+        def encode_image(image_path):
+            with open(image_path, "rb") as f:
+                return base64.b64encode(f.read()).decode("utf-8")
+            
         self.SUCCESS = 0
         self.invoiceno = invoiceno
         self.companydetails = customerDetails
@@ -990,6 +1139,29 @@ class bill:
         self.sales = sales
         self.totalwithgst = round(to_float(totalwithgst), 2)
 
+        config = configparser.ConfigParser()
+        config.read(resource_path("config", "configuration.ini"))
+        
+        self.Default_Company_Name= config.get("CompanyDetails", "company_name")
+        self.Default_Company_Address= config.get("CompanyDetails", "address")
+        self.Default_Company_Mobile=  config.get("CompanyDetails", "phone")
+        self.Default_Company_Email=  config.get("CompanyDetails", "email")
+        self.Default_Company_GST=  config.get("CompanyDetails", "gstin")
+        self.logo_path = config.get("CompanyDetails", "logo_image")
+
+        self.Default_Company_BankName = config.get("BankDetails", "bank_name")
+        self.Default_Company_BankBranch = config.get("BankDetails", "branch")
+        self.Default_Company_AccountNo = config.get("BankDetails", "account_no")
+        self.Default_Company_IFSC = config.get("BankDetails", "ifsc")
+        self.Default_Company_UPINAME = config.get("BankDetails", "upi_name")
+        self.Default_Company_UPIID = config.get("BankDetails", "upi_id")
+
+        if self.logo_path and os.path.exists(self.logo_path):
+            self.logo_base64 = "data:image/png;base64," + encode_image(self.logo_path)
+        else:
+            self.logo_base64 = ""
+
+        
         if gstoptional == "":
             self.gstnumber = self.companydetails[8]
         else:
@@ -1004,6 +1176,29 @@ class bill:
             self.scompanyname = "-------------------------------"
         self.setHTMLcontent()
 
+    def generate_upi_qr_base64(self, upi_id, name):
+        """
+        Generates a base64 PNG QR for UPI ID
+        """
+        upi_uri = f"upi://pay?pa={upi_id}&pn={name}&cu=INR"
+
+        qr = qrcode.QRCode(
+            version=1,                 # Controls complexity
+            error_correction=qrcode.constants.ERROR_CORRECT_Q,
+            box_size=6,                # SIZE CONTROL (important)
+            border=2                   # WHITE BORDER
+        )
+        qr.add_data(upi_uri)
+        qr.make(fit=True)
+
+        img = qr.make_image(fill_color="black", back_color="white")
+
+        buffer = io.BytesIO()
+        img.save(buffer, format="PNG")
+        buffer.seek(0)
+
+        return base64.b64encode(buffer.read()).decode("utf-8")
+
     def setHTMLcontent(self):
         def num_to_indian_words(num):
             words = num2words(num, lang="en_IN")
@@ -1014,11 +1209,12 @@ class bill:
             with open(image_path, "rb") as f:
                 return base64.b64encode(f.read()).decode("utf-8")
 
-        logo_path = resource_path("images", "icons", "icon_50x39.png")
-        upi_path = resource_path("images", "upi_image.jpg")
-
-        base64_logo = f"data:image/png;base64,{encode_image(logo_path)}"
-        base64_upi = f"data:image/png;base64,{encode_image(upi_path)}"
+        base64_logo = self.logo_base64 
+        
+        base64_upi = "data:image/png;base64," + self.generate_upi_qr_base64(
+            self.Default_Company_UPIID,
+            self.Default_Company_Name
+        )
 
         total_words = num_to_indian_words(self.totalwithgst)
         today_date = datetime.datetime.now().strftime("%d-%m-%Y")
@@ -1048,7 +1244,18 @@ class bill:
             "items": self.sales,
             "totalwithgst": self.totalwithgst,
             "totalinwords": total_words,
-            "upi_image": base64_upi
+            "upi_image": base64_upi,
+            "Default_Company_Name": self.Default_Company_Name,
+            "Default_Company_Address": self.Default_Company_Address,
+            "Default_Company_Mobile": self.Default_Company_Mobile,
+            "Default_Company_Email": self.Default_Company_Email,
+            "Default_Company_GST": self.Default_Company_GST,
+            "Default_Company_BankName": self.Default_Company_BankName,
+            "Default_Company_BankBranch": self.Default_Company_BankBranch,
+            "Default_Company_AccountNo": self.Default_Company_AccountNo,
+            "Default_Company_IFSC": self.Default_Company_IFSC,
+            "Default_Company_UPINAME": self.Default_Company_UPINAME,
+            "Default_Company_UPIID": self.Default_Company_UPIID
         }
 
         self.HTML_TEMPLATE = Template("""
@@ -1217,27 +1424,41 @@ class bill:
 
                     .payment_details {
                         display: flex;
-                        justify-content: space-between;
+                        align-items: center;
+                        justify-content: space-around;
                         width: 90%;
-                        margin: 0px;
-                        margin-top: 10px;
-                        margin-left: 40px;
+                        margin: 10px auto;
                         border: 1px solid grey;
                         border-radius: 20px;
+                        padding: 10px;
+                        box-sizing: border-box;
                     }
 
                     .bank_details {
-                        margin: 1px;
-                        padding-left: 10px;
+                        width: 40%;
+                        font-size: 14px;
+                    }
+                                      
+                    .upi{
+                        width: 20%;
+                        text-align: center;
+                    }
+
+                    .upi_details{
+                        width: 25%;
+                        text-align: center;
+                        font-size: 13px;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
                     }
                 </style>
             </head>
             <body lang="en">
                 <p style="margin-top:0px; margin-bottom: 5px;" id="dclabel"><u>TAX INVOICE</u></p>
                 <div class="cmpDetails">  
-                    <p id="companyName"><img src="{{image_path}}" alt="logo"><span>ABCDEFGH ENGINEERING INDUSTRIES</span> </p>
-                    <P id="companyAddress">No.4, 11th Cross, Patel Channappa Industrial Estate, Andhrahalli Main Road, Near Peenya 2nd Stage, Banglore-91.</P>    
-                    <p id="mobandmail">Phone No: 8147689901 | Email : kar411engineering@gmail.com</p>
+                    <p id="companyName"><img src="{{image_path}}" alt="logo"><span>{{Default_Company_Name}}</span> </p>
+                    <P id="companyAddress">{{Default_Company_Address}}</P>    
+                    <p id="mobandmail">Phone No: {{Default_Company_Mobile}} | Email : {{Default_Company_Email}}</p>
                     <hr style="width: 90%;">
                 </div>
                 
@@ -1245,7 +1466,7 @@ class bill:
                     <div class="invoice_details">
                         <p id="dc_no">Invoice No: {{invoiceno}}</p> 
                         <p id="invoice_date">Date: {{invoiceDate}}</p>
-                        <p>GSTIN : 29ARDPR1854M1Z7</p>
+                        <p>GSTIN : {{Default_Company_GST}}</p>
                     </div>
                     <div style="text-align: right; padding-right: 10px;">
                         <p>Your D.C.NO: {{cdcno}} <bold style="color: black;">|</bold> Date: {{cdDate}}</p>
@@ -1303,22 +1524,38 @@ class bill:
                     <div class="bank_details">
                         <p>
                             <strong style="padding-left: 50px; padding-bottom: 10px;"><u>Bank Details</u></strong><br>
-                            <strong>Bank Name:</strong> Union Bank of India<br>
-                            <strong>Branch:</strong> Peenya branch Bangalore<br>
-                            <strong>Account No:</strong>510101005825368<br>
-                            <strong>IFSC Code:</strong>UBIN0907634
+                            <strong>Bank Name:</strong> {{Default_Company_BankName}}<br>
+                            <strong>Branch:</strong> {{Default_Company_BankBranch}}<br>
+                            <strong>Account No:</strong>{{Default_Company_AccountNo}}<br>
+                            <strong>IFSC Code:</strong>{{Default_Company_IFSC}}
                         </p>
                     </div>
-                    <div>
-                        <hr style="height: 90%;">
-                    </div>
+                    <div style="width:1px; background:#999; height:120px;"></div>
                     <div class="upi">
-                        <img src={{upi_image}} alt="UPI Image" style="width:130px; height: 130px; padding: 5px auto; margin: auto;">
+                        <img 
+                            src="{{upi_image}}" 
+                            alt="UPI QR"
+                            style="
+                                width:120px;
+                                height:120px;
+                                padding: 6px;
+                                background: white;
+                                border: 1px solid #aaa;
+                                object-fit: contain;
+                                display: block;
+                                margin: auto;
+                            ">
                     </div>
                     <div class="upi_details">
                         <p style="font-weight: bold; text-align: center;">UPI DETAILS</p>
-                        <P>KARNATAKA ENGINEERING INDUSTRI</P>
-                        <P style="text-align: center;">karnatakaengineering@uboi</P>
+                        <P>{{Default_Company_UPINAME}}</P>
+                        <p style="
+                            text-align: center;
+                            word-break: break-all;
+                            font-size: 12px;
+                        ">
+                            {{Default_Company_UPIID}}
+                        </p>
                     </div>
                 </div>
                 <div class="signature-box">
@@ -1328,7 +1565,7 @@ class bill:
                         <p style="text-align: center;"><strong>Receiver’s Signature & Seal</strong> 
                     </div>  
                     <div class="sender_signature">    
-                        <p><strong>For KARNATAKA ENGINEERING INDUSTRIES</strong></p>      
+                        <p><strong>For {{Default_Company_Name}}</strong></p>      
                         <br><br> 
                         <p style="text-align: center;">Authorised Signature</p>
                     </div>

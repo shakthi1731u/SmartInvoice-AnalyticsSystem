@@ -1,19 +1,26 @@
+import configparser
 from customtkinter import *
-
+from utils.runtime_paths import resource_path
 
 class SplashScreen:
-    def __init__(self, master, on_close, duration=3000):
+    def __init__(self, master, font, on_close, duration=3000):
         self.on_close = on_close
+        self.font = font
         self.root = CTkToplevel(master)
         self.root.geometry("600x400+400+150")
         self.root.overrideredirect(True)
         self.root.attributes("-topmost", True)
         self.root.attributes("-alpha", 0.0)
 
+        CONFIG_PATH = resource_path("config", "configuration.ini")
+        config = configparser.ConfigParser()
+        config.read(CONFIG_PATH)
+        companyName = config.get("CompanyDetails", "company_name")
+
         self.title = CTkLabel(
             self.root,
-            text="SBHL LIMITED",
-            font=("Poppins Bold", 25),
+            text=companyName,
+            font=(self.font, 25, "bold"),
             text_color="#00ADB5"
         )
         self.title.pack(pady=100)
