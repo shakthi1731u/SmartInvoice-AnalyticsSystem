@@ -328,7 +328,7 @@ class Settings:
         CTkButton(self.right_frame, text="Save", font=(self.font, 15), command=lambda: save_settings(printercolorCombobox.get())).place(
             rely=0.25, relx=0.5, anchor="w")
         
-    # ---------------- COMPANY & BANK ----------------
+    # COMPANY & BANK
     def company_bank_settings(self):
         self.destroy_widgets()
 
@@ -403,11 +403,8 @@ class Settings:
 
         CTkButton(self.right_frame, text="Save Details", command=save).place(relx=0.45, rely=0.90)
 
-    
+    #convert png into ico format for the title icon
     def convert_image_to_ico(self, image_path):
-        """
-        Converts PNG/JPG to Windows .ico format
-        """
         ico_path = resource_path("images", "app_icon.ico")
 
         img = Image.open(image_path)

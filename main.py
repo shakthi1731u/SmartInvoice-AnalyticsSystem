@@ -300,7 +300,6 @@ if __name__ == "__main__":
         "delivery_challan": False
     }
 
-    # UI must be in main thread
     runapp(theme, fontstyle, windowControl)
 
 

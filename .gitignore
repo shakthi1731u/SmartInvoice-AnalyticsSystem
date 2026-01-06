@@ -4,5 +4,4 @@ token.pickle
 __pycache__/
 .datas/
 bills/
-.venv/
 *.pyc
